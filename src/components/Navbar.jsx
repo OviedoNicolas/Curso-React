@@ -1,7 +1,14 @@
-import React from "react";
+import React from 'react';
+import { CartWidget } from './CartWidget';
+import { Menu } from './Menu';
 
-export const Navbar = () => {
-  return <div className="navbar">Navbar</div>;
+export const NavBar = () => {
+    return ( 
+        <nav>
+            <Menu />
+            <CartWidget cantidad={10} />
+        </nav>
+    );
 };
 
-export default Navbar;
+export default NavBar;

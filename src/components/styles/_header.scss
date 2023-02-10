@@ -1,0 +1,84 @@
+header{
+    display: flex;
+    background-color: #000000;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 640px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.brand{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.logo{
+    width: 150px;
+}
+
+.iconoBolsa{
+    width: 30px;
+}
+
+.menu{
+    display: flex;
+    gap: 20px;
+}
+
+.banderin{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: $color-primario;
+    height: 50px;
+    width: 55px;
+    margin-bottom: 32px;
+    border-top: 3px double $decoracion;
+    border-bottom: none;
+
+    &::after{
+        content: "";
+        border-style: solid;
+        border-width: 15px 28px 12px 27px;
+        border-color: $color-primario $color-primario transparent $color-primario;
+        display: block;
+        position: absolute;
+        right: 688px;
+        top: 274px;
+    }
+
+    p{
+        background-color: $color-secundario;
+        color: #ebebeb;
+        font-size: 1rem;
+        min-width: 20px;
+        padding: 2px 3px;
+        text-align: center;
+        position: absolute;
+        top: 221px;
+        right: 682px;
+        z-index: 10;
+
+        &::after{
+            content: "";
+            border-style: solid;
+            border-width: 7px 7px 0px 0px;
+            border-color: $color-secundario transparent transparent transparent;
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 22px;
+        }
+    }
+}
