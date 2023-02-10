@@ -13,7 +13,7 @@ li {
 a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 img {
@@ -61,6 +61,13 @@ nav {
   display: flex;
   gap: 20px;
 }
+.menu li a:hover {
+  color: #b68d2c;
+  transition: 0.5s all;
+}
+.menu li a:hover li {
+  margin-bottom: 10px;
+}
 
 .banderin {
   display: flex;
@@ -72,6 +79,7 @@ nav {
   margin-bottom: 32px;
   border-top: 3px double #b68d2c;
   border-bottom: none;
+  z-index: 1;
 }
 .banderin::after {
   content: "";
@@ -80,7 +88,7 @@ nav {
   border-color: #610000 #610000 transparent #610000;
   display: block;
   position: absolute;
-  right: 688px;
+  right: 678px;
   top: 274px;
 }
 .banderin p {
@@ -92,7 +100,7 @@ nav {
   text-align: center;
   position: absolute;
   top: 221px;
-  right: 682px;
+  right: 675px;
   z-index: 10;
 }
 .banderin p::after {
@@ -104,4 +112,10 @@ nav {
   position: absolute;
   right: 10px;
   top: 22px;
+}
+
+.mensaje {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 30px;
 }/*# sourceMappingURL=style.css.map */

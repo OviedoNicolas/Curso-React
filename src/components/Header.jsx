@@ -9,7 +9,7 @@ export const Header = () => {
                 <div className='logo'>
                     <img src={logo} alt="logo de la empresa" />
                 </div>
-                <h1>La marzmorra del fantastico duende Earl weapons & magic shop</h1>
+                <h1>La marzmorra del fantástico duende Earl weapons & magic shop</h1>
             </div>
             <NavBar />
         </header>
