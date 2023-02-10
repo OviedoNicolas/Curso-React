@@ -9,10 +9,12 @@ li{
     list-style-type: none;
 }
 
-a{
-    text-decoration: none;
+button{
     color: #fff;
     font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 img{

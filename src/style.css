@@ -10,10 +10,12 @@ li {
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
+button {
   color: #fff;
   font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 img {
@@ -61,12 +63,9 @@ nav {
   display: flex;
   gap: 20px;
 }
-.menu li a:hover {
+.menu li button:hover {
   color: #b68d2c;
   transition: 0.5s all;
-}
-.menu li a:hover li {
-  margin-bottom: 10px;
 }
 
 .banderin {
@@ -118,4 +117,7 @@ nav {
   font-size: 3rem;
   text-align: center;
   margin-top: 30px;
+}
+.mensaje::first-letter {
+  font-size: 5rem;
 }/*# sourceMappingURL=style.css.map */

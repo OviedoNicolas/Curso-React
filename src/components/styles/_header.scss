@@ -35,13 +35,9 @@ nav{
     display: flex;
     gap: 20px;
 
-    li a:hover{
+    li button:hover{
         color: $decoracion;
         transition: .5s all;
-    }
-
-    li a:hover li{
-        margin-bottom: 10px;
     }
 }
 
