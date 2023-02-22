@@ -1,0 +1,133 @@
+.contadorContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    gap: 15px;
+}
+
+.contador{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $blanco;
+    color: $decoracion;
+    font-size: 1.30rem;
+    border-radius: 5px;
+}
+
+.suma{
+    font-size: 1.30rem;
+    background-color: $color-secundario;
+    color: $decoracion;
+    width: 30px;
+    height: 30px;
+    border: 4px double $decoracion;
+    border-radius: 3px
+}
+
+.resta{
+    @extend .suma;
+    background-color: $color-primario;
+}
+
+
+.agotado{
+    width: 150px;
+    color: $decoracion;
+    font-size: 1.30rem;
+    background-color: $color-primario;
+    text-align: center;
+    border-bottom: 3px double $decoracion;
+    border-top: 3px double $decoracion;
+    filter: drop-shadow(0px 3px 3px #00000059);
+    position: relative;
+
+    &::after {
+        content: "";
+        border-style: solid;
+        border-width: 12px 10px 12px 0px;
+        border-color: $color-primario transparent $color-primario $color-primario;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 150px;
+    }
+
+    &::before {
+        content: "";
+        border-style: solid;
+        border-width: 12px 0px 12px 10px;
+        border-color: $color-primario $color-primario $color-primario transparent ;
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 150px;
+    }
+}
+
+.agregar{
+    background-color: $blanco;
+    color: $decoracion;
+    width: 130px;
+    margin-bottom: 10px;
+    padding: 4px;
+    position: relative;
+    border-bottom: 3px double $decoracion;
+    border-top: 3px double $decoracion;
+    filter: drop-shadow(0px 3px 3px #00000059);
+
+    &:hover{
+        background-color: $color-secundario;
+        transition: all .2s;
+
+        &::after{
+            border-color: $color-secundario transparent $color-secundario $color-secundario;
+            transition: all .2s;
+        }
+        &::before{
+            border-color: $color-secundario $color-secundario $color-secundario transparent;
+            transition: all .2s;
+        }
+    }
+
+    &:active{
+        transition: all .1s;
+        width: 120px;
+
+        &::after{
+            transition: all .1s;
+            border-width: 15px 4px 15px 0px;
+            left: 120px;
+        }
+        &::before{
+            transition: all .1s;
+            border-width: 15px 0px 15px 4px;
+            right: 120px;
+        }
+    }
+
+    &::after {
+        content: "";
+        border-style: solid;
+        border-width: 15px 10px 15px 0px;
+        border-color: $blanco transparent $blanco $blanco;
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 130px;
+    }
+
+    &::before {
+        content: "";
+        border-style: solid;
+        border-width: 15px 0px 15px 10px;
+        border-color: $blanco $blanco $blanco transparent ;
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 130px;
+    }
+}

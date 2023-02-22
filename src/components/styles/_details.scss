@@ -1,0 +1,12 @@
+.detailContainer{
+    width: 1240px;
+    margin-inline: auto;
+    display: flex;
+    gap: 30px;
+}
+
+.detailProducto{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

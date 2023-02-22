@@ -1,0 +1,88 @@
+.card{
+    background-color: $blanco;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    border-radius: 5px;
+    height: 330px;
+    justify-content: space-between;
+    padding: 9px 3px 0px;
+    font-size: 1.2rem;
+    box-shadow: 0px 0px 10px #00000059;
+    border: 3px double $decoracion;
+
+    margin-top: 40px;
+
+    .cardFoto{
+        width: 200px;
+        align-self: center;
+        border: 3px double $decoracion;
+        background-color: $blanco;
+    }
+
+    .detalles{
+        background-color: $blanco;
+        color: $decoracion;
+        width: 130px;
+        align-self: center;
+        margin-bottom: 10px;
+        padding: 4px;
+        position: relative;
+        border-bottom: 3px double $decoracion;
+        border-top: 3px double $decoracion;
+        filter: drop-shadow(0px 3px 3px #00000059);
+
+        &:hover{
+            background-color: $color-secundario;
+            transition: all .2s;
+
+            &::after{
+                border-color: $color-secundario transparent $color-secundario $color-secundario;
+                transition: all .2s;
+            }
+            &::before{
+                border-color: $color-secundario $color-secundario $color-secundario transparent;
+                transition: all .2s;
+            }
+        }
+
+        &:active{
+            transition: all .1s;
+            width: 120px;
+
+            &::after{
+                transition: all .1s;
+                border-width: 15px 4px 15px 0px;
+                left: 120px;
+            }
+            &::before{
+                transition: all .1s;
+                border-width: 15px 0px 15px 4px;
+                right: 120px;
+            }
+        }
+
+        &::after {
+            content: "";
+            border-style: solid;
+            border-width: 15px 10px 15px 0px;
+            border-color: $blanco transparent $blanco $blanco;
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 130px;
+        }
+
+        &::before {
+            content: "";
+            border-style: solid;
+            border-width: 15px 0px 15px 10px;
+            border-color: $blanco $blanco $blanco transparent ;
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 130px;
+        }
+    }
+}

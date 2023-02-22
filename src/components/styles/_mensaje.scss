@@ -5,5 +5,9 @@
 
     &::first-letter{
         font-size: 5rem;
+        color: $decoracion;
+        background-color: $color-secundario;
+        border: 8px double $decoracion;
+        padding: 5px;
     }
 }

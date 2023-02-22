@@ -26,12 +26,32 @@ h1 {
   color: #fff;
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background-position: 0px 0px;
+  background-size: cover;
+  height: 1000px;
+}
+.hero div {
+  width: 300px;
+  margin-right: 400px;
+}
+.hero h2 {
+  color: #fff;
+  margin-right: 40px;
+  font-size: 3rem;
+}
+
 header {
   display: flex;
-  background-color: #000000;
+  background-color: #000;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
+  width: 100%;
 }
 
 nav {
@@ -57,11 +77,15 @@ nav {
 
 .iconoBolsa {
   width: 30px;
+  position: absolute;
 }
 
 .menu {
   display: flex;
   gap: 20px;
+}
+.menu button {
+  font-size: 1.25rem;
 }
 .menu li button:hover {
   color: #b68d2c;
@@ -76,7 +100,7 @@ nav {
   height: 50px;
   width: 55px;
   margin-bottom: 32px;
-  border-top: 3px double #b68d2c;
+  border-top: 4px double #b68d2c;
   border-bottom: none;
   z-index: 1;
 }
@@ -87,19 +111,18 @@ nav {
   border-color: #610000 #610000 transparent #610000;
   display: block;
   position: absolute;
-  right: 678px;
   top: 274px;
 }
 .banderin p {
   background-color: #1c440f;
-  color: #ebebeb;
+  color: #fff;
   font-size: 1rem;
   min-width: 20px;
   padding: 2px 3px;
   text-align: center;
-  position: absolute;
-  top: 221px;
-  right: 675px;
+  position: relative;
+  bottom: 36px;
+  left: 23px;
   z-index: 10;
 }
 .banderin p::after {
@@ -109,7 +132,7 @@ nav {
   border-color: #1c440f transparent transparent transparent;
   display: block;
   position: absolute;
-  right: 10px;
+  left: 20%;
   top: 22px;
 }
 
@@ -120,4 +143,225 @@ nav {
 }
 .mensaje::first-letter {
   font-size: 5rem;
+  color: #b68d2c;
+  background-color: #1c440f;
+  border: 8px double #b68d2c;
+  padding: 5px;
+}
+
+.card {
+  background-color: #fff;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  border-radius: 5px;
+  height: 330px;
+  justify-content: space-between;
+  padding: 9px 3px 0px;
+  font-size: 1.2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3490196078);
+  border: 3px double #b68d2c;
+  margin-top: 40px;
+}
+.card .cardFoto {
+  width: 200px;
+  align-self: center;
+  border: 3px double #b68d2c;
+  background-color: #fff;
+}
+.card .detalles {
+  background-color: #fff;
+  color: #b68d2c;
+  width: 130px;
+  align-self: center;
+  margin-bottom: 10px;
+  padding: 4px;
+  position: relative;
+  border-bottom: 3px double #b68d2c;
+  border-top: 3px double #b68d2c;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
+}
+.card .detalles:hover {
+  background-color: #1c440f;
+  transition: all 0.2s;
+}
+.card .detalles:hover::after {
+  border-color: #1c440f transparent #1c440f #1c440f;
+  transition: all 0.2s;
+}
+.card .detalles:hover::before {
+  border-color: #1c440f #1c440f #1c440f transparent;
+  transition: all 0.2s;
+}
+.card .detalles:active {
+  transition: all 0.1s;
+  width: 120px;
+}
+.card .detalles:active::after {
+  transition: all 0.1s;
+  border-width: 15px 4px 15px 0px;
+  left: 120px;
+}
+.card .detalles:active::before {
+  transition: all 0.1s;
+  border-width: 15px 0px 15px 4px;
+  right: 120px;
+}
+.card .detalles::after {
+  content: "";
+  border-style: solid;
+  border-width: 15px 10px 15px 0px;
+  border-color: #fff transparent #fff #fff;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 130px;
+}
+.card .detalles::before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0px 15px 10px;
+  border-color: #fff #fff #fff transparent;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 130px;
+}
+
+.contadorContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  gap: 15px;
+}
+
+.contador {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #b68d2c;
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+
+.suma, .resta {
+  font-size: 1.3rem;
+  background-color: #1c440f;
+  color: #b68d2c;
+  width: 30px;
+  height: 30px;
+  border: 4px double #b68d2c;
+  border-radius: 3px;
+}
+
+.resta {
+  background-color: #610000;
+}
+
+.agotado {
+  width: 150px;
+  color: #b68d2c;
+  font-size: 1.3rem;
+  background-color: #610000;
+  text-align: center;
+  border-bottom: 3px double #b68d2c;
+  border-top: 3px double #b68d2c;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
+  position: relative;
+}
+.agotado::after {
+  content: "";
+  border-style: solid;
+  border-width: 12px 10px 12px 0px;
+  border-color: #610000 transparent #610000 #610000;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 150px;
+}
+.agotado::before {
+  content: "";
+  border-style: solid;
+  border-width: 12px 0px 12px 10px;
+  border-color: #610000 #610000 #610000 transparent;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 150px;
+}
+
+.agregar {
+  background-color: #fff;
+  color: #b68d2c;
+  width: 130px;
+  margin-bottom: 10px;
+  padding: 4px;
+  position: relative;
+  border-bottom: 3px double #b68d2c;
+  border-top: 3px double #b68d2c;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
+}
+.agregar:hover {
+  background-color: #1c440f;
+  transition: all 0.2s;
+}
+.agregar:hover::after {
+  border-color: #1c440f transparent #1c440f #1c440f;
+  transition: all 0.2s;
+}
+.agregar:hover::before {
+  border-color: #1c440f #1c440f #1c440f transparent;
+  transition: all 0.2s;
+}
+.agregar:active {
+  transition: all 0.1s;
+  width: 120px;
+}
+.agregar:active::after {
+  transition: all 0.1s;
+  border-width: 15px 4px 15px 0px;
+  left: 120px;
+}
+.agregar:active::before {
+  transition: all 0.1s;
+  border-width: 15px 0px 15px 4px;
+  right: 120px;
+}
+.agregar::after {
+  content: "";
+  border-style: solid;
+  border-width: 15px 10px 15px 0px;
+  border-color: #fff transparent #fff #fff;
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 130px;
+}
+.agregar::before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0px 15px 10px;
+  border-color: #fff #fff #fff transparent;
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 130px;
+}
+
+.detailContainer {
+  width: 1240px;
+  margin-inline: auto;
+  display: flex;
+  gap: 30px;
+}
+
+.detailProducto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }/*# sourceMappingURL=style.css.map */
