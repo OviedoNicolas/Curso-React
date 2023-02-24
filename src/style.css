@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=MedievalSharp&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -354,14 +354,63 @@ nav {
 }
 
 .detailContainer {
-  width: 1240px;
+  max-width: 1240px;
   margin-inline: auto;
   display: flex;
   gap: 30px;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .detailProducto {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.detailTitulo {
+  font-size: 2.3rem;
+}
+
+.detailFoto {
+  width: 1200px;
+}
+
+.detailPrecio {
+  font-size: 1.5rem;
+  color: #b68d2c;
+}
+
+.detailDescripcion {
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 23px;
+}
+
+.tarjetasContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tarjetasImg {
+  width: 110px;
+  background-color: #fff;
+  border: 3px double #b68d2c;
+  border-radius: 5px;
+}
+
+.marcasContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.blanco {
+  position: relative;
+  filter: hue-rotate();
+}
+
+.negro {
+  background-color: #000;
+  position: relative;
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
 }/*# sourceMappingURL=style.css.map */

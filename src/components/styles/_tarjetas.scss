@@ -1,0 +1,12 @@
+.tarjetasContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tarjetasImg{
+    width: 110px;
+    background-color: $blanco;
+    border: 3px double $decoracion;
+    border-radius: 5px;
+}

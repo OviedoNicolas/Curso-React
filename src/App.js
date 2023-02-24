@@ -1,9 +1,7 @@
 import { Header } from './components/Header';
-import { Item } from './components/Item';
-import { ItemCount } from './components/ItemCount';
-import { ItemDetail } from './components/ItemDetail';
 import { Main } from './components/Main';
-import fotoEjemplo from './img/master.webp'
+import { Item } from './components/Item';
+import fotoEjemplo from './img/armas/master.png'
 
 // Este producto es para ejemplos, tento este como la imagen despues se deben borrar
 const producto = {
@@ -16,10 +14,9 @@ const producto = {
 function App() {
     return (
         <>
-            {/* <Header />
+            <Header />
             <Main /> 
-            <Item titulo={producto.nombre} precio={producto.precio} foto={producto.img} /> */}
-            <ItemDetail />
+            <Item titulo={producto.nombre} precio={producto.precio} foto={producto.img} />
         </>
     )
 }

@@ -1,0 +1,39 @@
+.marcasContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    // border: 4px double $decoracion;
+}
+
+.blanco{
+    // border: 4px double $decoracion;
+    position: relative;
+    filter: hue-rotate();
+
+    // &::before{
+    //     content: "";
+    //     border-style: solid;
+    //     border-width: 15px 160px 81px 160px;
+    //     border-color: $blanco $blanco transparent $blanco;
+    //     display: block;
+    //     position: absolute;
+    //     top: 229px;
+    // }
+}
+
+.negro{
+    background-color: $negro;
+    // border: 4px double $decoracion;
+    position: relative;
+    filter: drop-shadow(0px 3px 3px #00000059);
+
+    // &::before{
+    //     content: "";
+    //     border-style: solid;
+    //     border-width: 0px 160px 81px 160px;
+    //     border-color: $negro $negro transparent $negro;
+    //     display: block;
+    //     position: absolute;
+    //     top: 229px;
+    //     filter: drop-shadow(0px 3px 3px #00000059);
+    // }
+}
