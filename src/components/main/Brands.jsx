@@ -1,13 +1,13 @@
 import React from 'react'
-import bandidos  from '../img/Bandidos.svg'
-import hood  from '../img/RedHood.svg'
-import stone  from '../img/WizardsN.svg'
-import arthur from '../img/SirArthur.svg'
-import love  from '../img/Love&TearsN.svg'
-import espada  from '../img/LaEspadaN.svg'
+import bandidos  from '../../img/Bandidos.svg'
+import hood  from '../../img/RedHood.svg'
+import stone  from '../../img/WizardsN.svg'
+import arthur from '../../img/SirArthur.svg'
+import love  from '../../img/Love&TearsN.svg'
+import espada  from '../../img/LaEspadaN.svg'
 
 
-export const Marcas = () => {
+export const Brands = () => {
   return (
     <div className='marcasContainer'>
         <div className='blanco'>

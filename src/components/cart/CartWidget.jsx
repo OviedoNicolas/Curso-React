@@ -1,5 +1,5 @@
 import React from "react";
-import bolsa from "../img/bolsa.svg";
+import bolsa from "../../img/bolsa.svg";
 
 export const CartWidget = ({ cantidad }) => {
     return (

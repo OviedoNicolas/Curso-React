@@ -84,8 +84,51 @@ nav {
   display: flex;
   gap: 20px;
 }
+.menu .dropdown {
+  position: relative;
+}
+.menu .dropdown-menu.show {
+  display: block;
+}
+.menu .dropdown-menu {
+  z-index: 1000;
+  background: #610000;
+  position: absolute;
+  display: none;
+  text-align: left;
+  border-radius: 4px;
+  padding: 0.5rem 0.5rem;
+  min-width: 10rem;
+  border: 4px double #b68d2c;
+  inset: 10px auto auto 0px !important;
+}
+.menu .dropdown-menu .dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: inherit;
+  padding: 0.5rem 0;
+}
+.menu .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  color: #b68d2c;
+}
 .menu button {
   font-size: 1.25rem;
+}
+.menu button a {
+  color: #fff;
+  text-decoration: none;
+}
+.menu button a:hover {
+  color: #b68d2c;
+  transition: 0.5s all;
 }
 .menu li button:hover {
   color: #b68d2c;
@@ -149,6 +192,14 @@ nav {
   padding: 5px;
 }
 
+.itemList {
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1240px;
+  gap: 30px;
+}
+
 .card {
   background-color: #fff;
   width: 220px;
@@ -172,7 +223,6 @@ nav {
 }
 .card .detalles {
   background-color: #fff;
-  color: #b68d2c;
   width: 130px;
   align-self: center;
   margin-bottom: 10px;
@@ -181,6 +231,10 @@ nav {
   border-bottom: 3px double #b68d2c;
   border-top: 3px double #b68d2c;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
+}
+.card .detalles a {
+  text-decoration: none;
+  color: #b68d2c;
 }
 .card .detalles:hover {
   background-color: #1c440f;
@@ -359,10 +413,12 @@ nav {
   display: flex;
   gap: 30px;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 70px;
+  height: 600px;
 }
 
 .detailProducto {
+  width: 1000px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -373,7 +429,7 @@ nav {
 }
 
 .detailFoto {
-  width: 1200px;
+  width: 700px;
 }
 
 .detailPrecio {
@@ -402,15 +458,41 @@ nav {
 .marcasContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-top: 200px;
 }
 
 .blanco {
   position: relative;
-  filter: hue-rotate();
+  border-top: 4px double #b68d2c;
+}
+.blanco::before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 159px 81px 159px;
+  border-color: #fff #fff transparent #fff;
+  display: block;
+  position: absolute;
+  top: 229px;
+  filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.3490196078));
 }
 
 .negro {
   background-color: #000;
+  border: 4px double #b68d2c;
   position: relative;
-  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
+  filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.3490196078));
+}
+
+footer {
+  background-color: #000;
+  display: flex;
+  height: 180px;
+  margin-top: 200px;
+}
+footer h4 {
+  color: #fff;
+  text-decoration: underline;
+}
+footer .imgFooter {
+  width: 120px;
 }/*# sourceMappingURL=style.css.map */

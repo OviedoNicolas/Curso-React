@@ -37,8 +37,58 @@ nav{
     display: flex;
     gap: 20px;
 
+    .dropdown{
+        position: relative;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    .dropdown-menu {
+        z-index: 1000;
+        background: $color-primario;
+        position: absolute;
+        display: none;
+        text-align: left;
+        border-radius: 4px;
+        padding: .5rem .5rem ;
+        min-width: 10rem;
+        border: 4px double $decoracion ;
+        inset: 10px auto auto 0px !important;
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            text-align: inherit;
+            padding: 0.5rem 0;
+        }
+    }
+
+    .dropdown-toggle::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+        color: $decoracion;
+    }
+
     button{
         font-size: 1.25rem;
+
+        a{
+            color: $blanco;
+            text-decoration: none;
+
+            &:hover{
+                color: $decoracion;
+                transition: .5s all;
+            }
+        }
     }
 
     li button:hover{
