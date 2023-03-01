@@ -26,25 +26,6 @@ h1 {
   color: #fff;
 }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  background-position: 0px 0px;
-  background-size: cover;
-  height: 1000px;
-}
-.hero div {
-  width: 300px;
-  margin-right: 400px;
-}
-.hero h2 {
-  color: #fff;
-  margin-right: 40px;
-  font-size: 3rem;
-}
-
 header {
   display: flex;
   background-color: #000;
@@ -198,6 +179,7 @@ nav {
   flex-wrap: wrap;
   width: 1240px;
   gap: 30px;
+  justify-content: center;
 }
 
 .card {
@@ -205,7 +187,6 @@ nav {
   width: 220px;
   display: flex;
   flex-direction: column;
-  margin-inline: auto;
   border-radius: 5px;
   height: 330px;
   justify-content: space-between;
@@ -231,10 +212,9 @@ nav {
   border-bottom: 3px double #b68d2c;
   border-top: 3px double #b68d2c;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
-}
-.card .detalles a {
-  text-decoration: none;
   color: #b68d2c;
+  text-decoration: none;
+  text-align: center;
 }
 .card .detalles:hover {
   background-color: #1c440f;
@@ -495,4 +475,16 @@ footer h4 {
 }
 footer .imgFooter {
   width: 120px;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #b68d2c;
+  transition: 0.5s all;
+}
+
+.heroBanner {
+  color: #fff;
 }/*# sourceMappingURL=style.css.map */

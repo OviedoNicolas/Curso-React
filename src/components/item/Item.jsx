@@ -12,11 +12,9 @@ export const Item = ({id, img, nombre, precio}) => {
           </div>
           <p>{nombre}</p>
           <p>₹ {precio}</p>
-          <button className='detalles'>
-              <Link to={`/producto/${id}`}>
-                Ver detalles
-              </Link>
-          </button>
+          <Link className='detalles' to={`/producto/${id}`}>
+            Ver detalles
+          </Link>
       </div>
     )
 }

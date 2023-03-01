@@ -8,43 +8,37 @@ export const ItemListContainer = () => {
     const { categoria, subcategoria } = useParams()
     const [productos, setProductos] = useState([])
 
-    const productosPorCategoria = new Promise((resolve, reject) => {
+    useEffect(() => {
+      setProductos ()
+      const productosPorCategoria = new Promise((resolve, reject) => {
         setTimeout(() => {
           if(data.length){
-            resolve(data.filter(producto => producto.categoria == categoria))
+            resolve(data.filter(producto => producto.categoria === categoria))
           } else {
             reject("No hay productos para mostrar")
           }
-        }, 2000)
+        }, 200)
       })
 
     const productosSubCategoria = new Promise((resolve, reject) => {
         setTimeout(() => {
           if(data.length){
-            resolve(data.filter(producto => producto.subcategoria == subcategoria))
+            resolve(data.filter(producto => producto.subcategoria === subcategoria))
           } else {
             reject("No hay productos para mostrar")
           }
-        }, 2000)
+        }, 200)
       })
 
-    useEffect(() => {
-        setProductos ()
         if (subcategoria){
             productosSubCategoria
             .then(res => {
                 setProductos (res)
             })
-            .catch(err =>{
-                return <h3 className='mensaje'>{err}</h3>
-            })
         } else if (categoria){
             productosPorCategoria
             .then (res =>{
                 setProductos (res)
-            })
-            .catch(err =>{
-                <h3 className='mensaje'>{err}</h3>
             })
         } else{
             setProductos (data)

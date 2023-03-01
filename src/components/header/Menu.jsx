@@ -28,7 +28,7 @@ export const Menu = () => {
                             <Link to={`productos/ropa/mujer`}>Mujer</Link>
                         </DropdownItem>
                         <DropdownItem>
-                            <Link to={`productos/ropa/armaduras`}>Armaduras</Link>
+                            <Link to={`productos/ropa/unisex`}>Unisex</Link>
                         </DropdownItem>
                         <DropdownItem>
                             <Link to={`productos/ropa`}>Ver todos</Link>

@@ -12,4 +12,14 @@ footer{
     .imgFooter{
         width: 120px;
     }
+
+    a{
+        color: $blanco;
+        text-decoration: none;
+
+        &:hover{
+            color: $decoracion;
+            transition: .5s all;
+        }
+    }
 }

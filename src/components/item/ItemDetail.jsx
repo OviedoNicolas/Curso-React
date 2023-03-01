@@ -11,18 +11,18 @@ export const ItemDetail = () => {
   const { productoId } = useParams()
   const [producto, setProducto] = useState()
 
+
+useEffect(() => {
   const getProducto = new Promise((resolve, reject) => {
     setTimeout(() => {
       if(data.length){
-        resolve(data.find(producto => producto.id == productoId))
+        resolve(data.find(producto => producto.id === productoId))
       } else {
         reject("No hay productos para mostrar")
       }
-    }, 2000)
+    }, 200)
   })
 
-
-useEffect(() => {
   setProducto ()
   getProducto
   .then(res => {
