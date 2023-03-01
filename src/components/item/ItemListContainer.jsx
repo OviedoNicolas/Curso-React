@@ -17,7 +17,7 @@ export const ItemListContainer = () => {
           } else {
             reject("No hay productos para mostrar")
           }
-        }, 200)
+        }, 2000)
       })
 
     const productosSubCategoria = new Promise((resolve, reject) => {
@@ -27,7 +27,7 @@ export const ItemListContainer = () => {
           } else {
             reject("No hay productos para mostrar")
           }
-        }, 200)
+        }, 2000)
       })
 
         if (subcategoria){

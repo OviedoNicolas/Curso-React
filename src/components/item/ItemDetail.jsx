@@ -20,7 +20,7 @@ useEffect(() => {
       } else {
         reject("No hay productos para mostrar")
       }
-    }, 200)
+    }, 2000)
   })
 
   setProducto ()
