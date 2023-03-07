@@ -13,6 +13,21 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    .botonBolsa{
+        width: 150px;
+        height: 91px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a{
+            @extend .agregar;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
 }
 
 .detailTitulo{

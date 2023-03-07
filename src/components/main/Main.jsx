@@ -3,6 +3,7 @@ import { ItemDetail } from '../item/ItemDetail'
 import { ItemListContainer } from '../item/ItemListContainer'
 import { Routes, Route } from 'react-router-dom';
 import { Landing } from '../landing/Landing';
+import { Cart } from '../cart/Cart';
 
 export const Main = () => {
     return (
@@ -13,6 +14,7 @@ export const Main = () => {
                 <Route exact path ='/productos' element={<ItemListContainer />} />
                 <Route exact path ='/productos/:categoria' element={<ItemListContainer />} />
                 <Route exact path ='/productos/:categoria/:subcategoria' element={<ItemListContainer />} />
+                <Route exact path='/bolsa' element = {<Cart />} />
             </Routes>
         </main>
     )

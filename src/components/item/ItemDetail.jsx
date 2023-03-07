@@ -4,12 +4,13 @@ import vitas from '../../img/vitas.png'
 import magic from '../../img/magicCard.png'
 import kingdom from '../../img/kingdom.png'
 import data from '../data'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 export const ItemDetail = () => {
 
   const { productoId } = useParams()
   const [producto, setProducto] = useState()
+  const [agregado, setAgregado] = useState(false)
 
 
 useEffect(() => {
@@ -33,6 +34,10 @@ useEffect(() => {
   })
 }, [productoId])
 
+const onAdd = () => {
+  setAgregado (true)
+}
+
 
   return (
     producto ?
@@ -45,7 +50,14 @@ useEffect(() => {
             <h2 className='detailTitulo'>{producto.nombre}</h2>
             <h3 className='detailPrecio'>₹ {producto.precio}</h3>
             <p className='detailDescripcion'>{producto.descripcion}</p>
-            <ItemCount stock={producto.stock} />
+            {
+              !agregado ?
+                <ItemCount stock={producto.stock} onAdd= {onAdd} /> 
+                :
+                <div className='botonBolsa'>
+                  <Link to= {`/bolsa`}>Ver bolsa</Link>
+                </div>
+            }
             <p>En stock: {producto.stock} </p>
             <div className='tarjetasContainer'>
               <div className='tarjetasImg'>

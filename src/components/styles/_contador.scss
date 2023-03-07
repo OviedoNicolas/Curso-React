@@ -25,7 +25,22 @@
     width: 30px;
     height: 30px;
     border: 4px double $decoracion;
-    border-radius: 3px
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px #575757;
+
+    &:active{
+        transform: translateY(2px);
+        box-shadow: 1px 1px 3px #575757;
+    }
+}
+
+.disabled{
+    @extend .suma;
+    background-color: #575757;
+    color: #a5a5a5;
+    border: 4px double #a5a5a5;
+    transform: translateY(2px);
+    box-shadow: 1px 1px 3px #575757;
 }
 
 .resta{

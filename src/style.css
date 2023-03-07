@@ -283,7 +283,7 @@ nav {
   border-radius: 5px;
 }
 
-.suma, .resta {
+.suma, .resta, .disabled {
   font-size: 1.3rem;
   background-color: #1c440f;
   color: #b68d2c;
@@ -291,6 +291,19 @@ nav {
   height: 30px;
   border: 4px double #b68d2c;
   border-radius: 3px;
+  box-shadow: 2px 2px 5px #575757;
+}
+.suma:active, .resta:active, .disabled:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 3px #575757;
+}
+
+.disabled {
+  background-color: #575757;
+  color: #a5a5a5;
+  border: 4px double #a5a5a5;
+  transform: translateY(2px);
+  box-shadow: 1px 1px 3px #575757;
 }
 
 .resta {
@@ -329,7 +342,7 @@ nav {
   right: 150px;
 }
 
-.agregar {
+.agregar, .detailProducto .botonBolsa a {
   background-color: #fff;
   color: #b68d2c;
   width: 130px;
@@ -340,33 +353,33 @@ nav {
   border-top: 3px double #b68d2c;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
 }
-.agregar:hover {
+.agregar:hover, .detailProducto .botonBolsa a:hover {
   background-color: #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::after {
+.agregar:hover::after, .detailProducto .botonBolsa a:hover::after {
   border-color: #1c440f transparent #1c440f #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::before {
+.agregar:hover::before, .detailProducto .botonBolsa a:hover::before {
   border-color: #1c440f #1c440f #1c440f transparent;
   transition: all 0.2s;
 }
-.agregar:active {
+.agregar:active, .detailProducto .botonBolsa a:active {
   transition: all 0.1s;
   width: 120px;
 }
-.agregar:active::after {
+.agregar:active::after, .detailProducto .botonBolsa a:active::after {
   transition: all 0.1s;
   border-width: 15px 4px 15px 0px;
   left: 120px;
 }
-.agregar:active::before {
+.agregar:active::before, .detailProducto .botonBolsa a:active::before {
   transition: all 0.1s;
   border-width: 15px 0px 15px 4px;
   right: 120px;
 }
-.agregar::after {
+.agregar::after, .detailProducto .botonBolsa a::after {
   content: "";
   border-style: solid;
   border-width: 15px 10px 15px 0px;
@@ -376,7 +389,7 @@ nav {
   top: 0px;
   left: 130px;
 }
-.agregar::before {
+.agregar::before, .detailProducto .botonBolsa a::before {
   content: "";
   border-style: solid;
   border-width: 15px 0px 15px 10px;
@@ -402,6 +415,18 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.detailProducto .botonBolsa {
+  width: 150px;
+  height: 91px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detailProducto .botonBolsa a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .detailTitulo {
@@ -485,6 +510,212 @@ footer a:hover {
   transition: 0.5s all;
 }
 
-.heroBanner {
+.heroOculto {
+  display: none;
+}
+
+.bannerGuerrera {
+  width: 800px;
+  height: 300px;
+  position: relative;
+  top: 25%;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tituloGuerrera {
+  color: #b68d2c;
+  font-size: 5rem;
+  animation-name: guerrera;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(2px 2px 5px #202020);
+}
+
+@keyframes guerrera {
+  from {
+    transform: translateY(-100px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    display: visible;
+    opacity: 1;
+    display: inline-block;
+  }
+}
+.subtituloGuerrera {
   color: #fff;
+  font-size: 4rem;
+  animation-name: guerreraSub;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes guerreraSub {
+  from {
+    transform: translateX(150px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    display: visible;
+    opacity: 1;
+  }
+}
+.bannerHeroina {
+  width: 1600px;
+  position: relative;
+  top: 30%;
+  left: 8%;
+  display: flex;
+  height: 300px;
+  justify-content: space-between;
+}
+
+.tituloHeroina {
+  color: #b68d2c;
+  font-size: 5rem;
+  animation-name: heroina;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(2px 2px 5px #202020);
+}
+
+@keyframes heroina {
+  from {
+    transform: translateX(-100px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    display: visible;
+    opacity: 1;
+    display: inline-block;
+  }
+}
+.subtituloHeroina {
+  color: #fff;
+  font-size: 4rem;
+  animation-name: heroinaSub;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  align-self: flex-end;
+  text-align: end;
+}
+
+@keyframes heroinaSub {
+  from {
+    transform: translateX(50px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    display: visible;
+    opacity: 1;
+  }
+}
+.bannerArquero {
+  width: 800px;
+  height: 300px;
+  position: relative;
+  top: 25%;
+  left: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tituloArquero {
+  color: #b68d2c;
+  font-size: 5rem;
+  animation-name: arquero;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(2px 2px 5px #202020);
+}
+
+@keyframes arquero {
+  from {
+    transform: translateX(100px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    display: visible;
+    opacity: 1;
+    display: inline-block;
+  }
+}
+.subtituloArquero {
+  color: #fff;
+  font-size: 4rem;
+  animation-name: arqueroSub;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes arqueroSub {
+  from {
+    transform: translateX(200px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    display: visible;
+    opacity: 1;
+  }
+}
+.heroTitulo {
+  color: #b68d2c;
+  font-size: 60px;
+  animation-name: titulo;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes titulo {
+  from {
+    transform: translateY(-50px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    display: visible;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.397);
+    display: inline-block;
+  }
+}
+.heroSubtitulo {
+  color: #fff;
+  font-size: 40px;
+  animation-name: subtitulo;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes subtitulo {
+  from {
+    transform: translateX(50px);
+    display: none;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    display: visible;
+    opacity: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
