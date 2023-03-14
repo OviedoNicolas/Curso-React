@@ -342,7 +342,7 @@ nav {
   right: 150px;
 }
 
-.agregar, .detailProducto .botonBolsa a {
+.agregar, .detailProducto .botonBolsa a, .detailProducto .botonSeguir a {
   background-color: #fff;
   color: #b68d2c;
   width: 130px;
@@ -353,33 +353,33 @@ nav {
   border-top: 3px double #b68d2c;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
 }
-.agregar:hover, .detailProducto .botonBolsa a:hover {
+.agregar:hover, .detailProducto .botonBolsa a:hover, .detailProducto .botonSeguir a:hover {
   background-color: #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::after, .detailProducto .botonBolsa a:hover::after {
+.agregar:hover::after, .detailProducto .botonBolsa a:hover::after, .detailProducto .botonSeguir a:hover::after {
   border-color: #1c440f transparent #1c440f #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::before, .detailProducto .botonBolsa a:hover::before {
+.agregar:hover::before, .detailProducto .botonBolsa a:hover::before, .detailProducto .botonSeguir a:hover::before {
   border-color: #1c440f #1c440f #1c440f transparent;
   transition: all 0.2s;
 }
-.agregar:active, .detailProducto .botonBolsa a:active {
+.agregar:active, .detailProducto .botonBolsa a:active, .detailProducto .botonSeguir a:active {
   transition: all 0.1s;
   width: 120px;
 }
-.agregar:active::after, .detailProducto .botonBolsa a:active::after {
+.agregar:active::after, .detailProducto .botonBolsa a:active::after, .detailProducto .botonSeguir a:active::after {
   transition: all 0.1s;
   border-width: 15px 4px 15px 0px;
   left: 120px;
 }
-.agregar:active::before, .detailProducto .botonBolsa a:active::before {
+.agregar:active::before, .detailProducto .botonBolsa a:active::before, .detailProducto .botonSeguir a:active::before {
   transition: all 0.1s;
   border-width: 15px 0px 15px 4px;
   right: 120px;
 }
-.agregar::after, .detailProducto .botonBolsa a::after {
+.agregar::after, .detailProducto .botonBolsa a::after, .detailProducto .botonSeguir a::after {
   content: "";
   border-style: solid;
   border-width: 15px 10px 15px 0px;
@@ -389,7 +389,7 @@ nav {
   top: 0px;
   left: 130px;
 }
-.agregar::before, .detailProducto .botonBolsa a::before {
+.agregar::before, .detailProducto .botonBolsa a::before, .detailProducto .botonSeguir a::before {
   content: "";
   border-style: solid;
   border-width: 15px 0px 15px 10px;
@@ -410,23 +410,53 @@ nav {
   height: 600px;
 }
 
+.messageContainer {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .detailProducto {
   width: 1000px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.detailProducto .botonBolsa {
+.detailProducto .botonBolsa, .detailProducto .botonSeguir {
   width: 150px;
-  height: 91px;
+  height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.detailProducto .botonBolsa a {
+.detailProducto .botonBolsa a, .detailProducto .botonSeguir a {
   text-decoration: none;
   font-size: 1.2rem;
   text-align: center;
+}
+.detailProducto .botonSeguir {
+  width: 200px;
+  height: 45px;
+}
+.detailProducto .botonSeguir a {
+  width: 190px;
+}
+.detailProducto .botonSeguir a::before {
+  right: 190px;
+}
+.detailProducto .botonSeguir a::after {
+  left: 190px;
+}
+.detailProducto .botonSeguir a:active {
+  width: 180px;
+}
+.detailProducto .botonSeguir a:active::before {
+  right: 180px;
+}
+.detailProducto .botonSeguir a:active::after {
+  left: 180px;
 }
 
 .detailTitulo {
@@ -445,6 +475,13 @@ nav {
 .detailDescripcion {
   font-family: "Macondo Swash Caps", cursive;
   font-size: 23px;
+}
+
+.continuarContainer {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tarjetasContainer {
@@ -717,5 +754,91 @@ footer a:hover {
     transform: translateX(0px);
     display: visible;
     opacity: 1;
+  }
+}
+.loaderContainer {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 0;
+  top: -75px;
+  animation: animloader 4s ease infinite;
+}
+
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75px;
+  height: 75px;
+  background: #b68d2c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  animation: animloader2 2s ease infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 0 75px rgba(255, 255, 255, 0), 75px 75px rgba(255, 255, 255, 0), 75px 150px rgba(255, 255, 255, 0), 0px 150px rgba(255, 255, 255, 0);
+  }
+  12% {
+    box-shadow: 0 75px #b68d2c, 75px 75px rgba(255, 255, 255, 0), 75px 150px rgba(255, 255, 255, 0), 0px 150px rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 0 75px #b68d2c, 75px 75px #b68d2c, 75px 150px rgba(255, 255, 255, 0), 0px 150px rgba(255, 255, 255, 0);
+  }
+  37% {
+    box-shadow: 0 75px #b68d2c, 75px 75px #b68d2c, 75px 150px #b68d2c, 0px 150px rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 0 75px #b68d2c, 75px 75px #b68d2c, 75px 150px #b68d2c, 0px 150px #b68d2c;
+  }
+  62% {
+    box-shadow: 0 75px rgba(255, 255, 255, 0), 75px 75px #b68d2c, 75px 150px #b68d2c, 0px 150px #b68d2c;
+  }
+  75% {
+    box-shadow: 0 75px rgba(255, 255, 255, 0), 75px 75px rgba(255, 255, 255, 0), 75px 150px #b68d2c, 0px 150px #b68d2c;
+  }
+  87% {
+    box-shadow: 0 75px rgba(255, 255, 255, 0), 75px 75px rgba(255, 255, 255, 0), 75px 150px rgba(255, 255, 255, 0), 0px 150px #b68d2c;
+  }
+  100% {
+    box-shadow: 0 75px rgba(255, 255, 255, 0), 75px 75px rgba(255, 255, 255, 0), 75px 150px rgba(255, 255, 255, 0), 0px 150px rgba(255, 255, 255, 0);
+  }
+}
+@keyframes animloader2 {
+  0% {
+    transform: translate(0, 0) rotateX(0) rotateY(0);
+  }
+  25% {
+    transform: translate(100%, 0) rotateX(0) rotateY(180deg);
+  }
+  50% {
+    transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg);
+  }
+  75% {
+    transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg);
+  }
+  100% {
+    transform: translate(0, 0) rotateX(0) rotateY(360deg);
   }
 }/*# sourceMappingURL=style.css.map */

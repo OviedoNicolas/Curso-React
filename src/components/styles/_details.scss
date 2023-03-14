@@ -8,6 +8,14 @@
     height: 600px;
 }
 
+.messageContainer{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .detailProducto{
     width: 1000px;
     display: flex;
@@ -16,7 +24,7 @@
 
     .botonBolsa{
         width: 150px;
-        height: 91px;
+        height: 46px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -26,6 +34,37 @@
             text-decoration: none;
             font-size: 1.2rem;
             text-align: center;
+        }
+    }
+
+    .botonSeguir{
+        @extend .botonBolsa;
+        width: 200px;
+        height: 45px;
+
+        a{
+            @extend .agregar;
+            width: 190px;
+            
+            &::before{
+                right: 190px;
+            }
+
+            &::after{
+                left: 190px;
+            }
+
+            &:active{
+                width: 180px;
+
+                &::before{
+                    right: 180px;
+                }
+    
+                &::after{
+                    left: 180px;
+                }
+            }
         }
     }
 }
@@ -46,4 +85,11 @@
 .detailDescripcion{
     font-family: 'Macondo Swash Caps', cursive;
     font-size: 23px;
+}
+
+.continuarContainer{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

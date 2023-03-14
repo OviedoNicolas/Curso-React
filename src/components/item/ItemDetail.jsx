@@ -3,35 +3,33 @@ import { ItemCount } from './ItemCount'
 import vitas from '../../img/vitas.png'
 import magic from '../../img/magicCard.png'
 import kingdom from '../../img/kingdom.png'
-import data from '../data'
 import { Link, useParams } from 'react-router-dom'
+import { getFirestore, doc , getDoc} from 'firebase/firestore'
+import { Loader } from '../loader/Loader'
+
 
 export const ItemDetail = () => {
 
   const { productoId } = useParams()
   const [producto, setProducto] = useState()
   const [agregado, setAgregado] = useState(false)
+  const [loading, setLoading] = useState(true)
 
 
 useEffect(() => {
-  const getProducto = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if(data.length){
-        resolve(data.find(producto => producto.id === productoId))
-      } else {
-        reject("No hay productos para mostrar")
-      }
-    }, 2000)
-  })
 
-  setProducto ()
-  getProducto
-  .then(res => {
-    setProducto (res)
-  })
-  .catch(err => {
-      <p>{err}</p>
-  })
+  const dataBase = getFirestore ()
+  const itemDb = doc( dataBase, 'items' , productoId)
+  getDoc (itemDb)
+    .then(res => {if (res.data()) {
+      setProducto({id: res.id, ...res.data()})
+      setLoading (false)
+    }else{
+      setProducto()
+      setLoading (false)
+    }})
+
+
 }, [productoId])
 
 const onAdd = () => {
@@ -40,42 +38,49 @@ const onAdd = () => {
 
 
   return (
-    producto ?
-
-    <div key={producto.id} className='detailContainer'>
-        <div className='detailFoto'>
-            <img src= {require(`../../img/productos/${producto.img}`)} alt={producto.nombre}/>
-        </div>
-        <div className='detailProducto'>
-            <h2 className='detailTitulo'>{producto.nombre}</h2>
-            <h3 className='detailPrecio'>₹ {producto.precio}</h3>
-            <p className='detailDescripcion'>{producto.descripcion}</p>
-            {
-              !agregado ?
-                <ItemCount stock={producto.stock} onAdd= {onAdd} /> 
-                :
-                <div className='botonBolsa'>
-                  <Link to= {`/bolsa`}>Ver bolsa</Link>
-                </div>
-            }
-            <p>En stock: {producto.stock} </p>
-            <div className='tarjetasContainer'>
-              <div className='tarjetasImg'>
-                <img src={vitas} alt="" />
-              </div>
-              <div className='tarjetasImg'>
-                <img src={magic} alt="" />
-              </div>
-              <div className='tarjetasImg'>
-                <img src={kingdom} alt="" />
-              </div>
-            </div>
-        </div>
-    </div>
+    loading ?
+      <Loader loading={loading} />
     :
+      producto ?
+      <div key={producto.id} className='detailContainer'>
+          <div className='detailFoto'>
+              <img src= {producto.imgUrl} alt={producto.title}/>
+          </div>
+          <div className='detailProducto'>
+              <h2 className='detailTitulo'>{producto.title}</h2>
+              <h3 className='detailPrecio'>₹ {producto.price}</h3>
+              <p className='detailDescripcion'>{producto.description}</p>
+              {
+                !agregado ?
+                  <ItemCount stock={producto.stock} onAdd= {onAdd} /> 
+                  :
+                  <div className='continuarContainer'>
+                    <div className='botonBolsa'>
+                      <Link to= {`/bolsa`}>Ver bolsa</Link>
+                    </div>
+                    <div className='botonSeguir'>
+                      <Link to= {`/productos`}>Seguir comprando</Link>
+                    </div>
+                  </div>
+              }
+              <p>En stock: {producto.stock} </p>
+              <div className='tarjetasContainer'>
+                <div className='tarjetasImg'>
+                  <img src={vitas} alt="" />
+                </div>
+                <div className='tarjetasImg'>
+                  <img src={magic} alt="" />
+                </div>
+                <div className='tarjetasImg'>
+                  <img src={kingdom} alt="" />
+                </div>
+              </div>
+          </div>
+      </div>
+      :
 
-    <div className='detailContainer'>
-      <h2 className='mensaje'>Cargando...</h2>
-    </div>
-  )
+      <div className='messageContainer'>
+        <h2 className='mensaje'>Lo sentimos, no hay coincidencia</h2>
+      </div>
+    )
 }

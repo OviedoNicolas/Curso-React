@@ -8,7 +8,7 @@ export const Item = ({id, img, nombre, precio}) => {
   return (
       <div className='card'>
           <div className='cardFoto'>
-              <img src= {require(`../../img/productos/${img}`)} alt={nombre}/>
+              <img src={img} alt={nombre}/>
           </div>
           <p>{nombre}</p>
           <p>₹ {precio}</p>
