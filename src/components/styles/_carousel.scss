@@ -1,0 +1,49 @@
+.carouselContainer{
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 70px;
+}
+
+.carousel{
+    width: 1300px;
+
+    div{
+        margin-inline: auto;
+    }
+    h3{
+        font-size: 40px;
+        text-decoration: double underline 2px $decoracion;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+.slick-prev:before, .slick-next:before{
+    color: $decoracion !important;
+    font-size: 30px !important;
+}
+
+.slick-prev {
+    left: -35px !important;
+}
+
+.slick-next {
+    right: -35px !important;
+}
+
+.fondoBordo{
+    background-color: $color-primario;
+    border: 4px double $decoracion;
+
+    h3{
+        color: $blanco;
+    }
+
+    .slick-prev:before, .slick-next:before{
+        color: $blanco !important;
+        font-size: 30px !important;
+    }
+}

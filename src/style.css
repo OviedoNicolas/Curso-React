@@ -39,9 +39,17 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 640px;
+  width: 780px;
   justify-content: space-evenly;
   margin-top: 20px;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+}
+nav ul #todos {
+  font-size: 25px;
+  text-decoration: underline #b68d2c;
 }
 
 .brand {
@@ -498,9 +506,20 @@ nav {
 }
 
 .marcasContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.marcasContainer h3 {
+  align-self: center;
+  font-size: 40px;
+  text-decoration: double underline 2px #b68d2c;
+}
+
+.marcas {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .blanco {
@@ -841,4 +860,126 @@ footer a:hover {
   100% {
     transform: translate(0, 0) rotateX(0) rotateY(360deg);
   }
+}
+.carouselContainer {
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  margin-top: 70px;
+}
+
+.carousel {
+  width: 1300px;
+}
+.carousel div {
+  margin-inline: auto;
+}
+.carousel h3 {
+  font-size: 40px;
+  text-decoration: double underline 2px #b68d2c;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #b68d2c !important;
+  font-size: 30px !important;
+}
+
+.slick-prev {
+  left: -35px !important;
+}
+
+.slick-next {
+  right: -35px !important;
+}
+
+.fondoBordo {
+  background-color: #610000;
+  border: 4px double #b68d2c;
+}
+.fondoBordo h3 {
+  color: #fff;
+}
+.fondoBordo .slick-prev:before, .fondoBordo .slick-next:before {
+  color: #fff !important;
+  font-size: 30px !important;
+}
+
+.gallery {
+  width: 100%;
+  height: 1000px;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "caballero caballero caperuzita campesino runas mago" "caballero caballero caperuzita campesino runas mago" "bolso princesa chicos chicos chica principe" "nieve princesa chicos chicos chica principe" "chicas chicas vikingo piernas ladron ladron" "chicas chicas vikingo piernas ladron ladron";
+  filter: grayscale(20%);
+}
+.gallery div {
+  height: 100%;
+}
+
+.caballero {
+  grid-area: caballero;
+}
+
+.caperuzita {
+  grid-area: caperuzita;
+}
+
+.campesino {
+  grid-area: campesino;
+}
+
+.princesa {
+  grid-area: princesa;
+}
+
+.runas {
+  grid-area: runas;
+}
+
+.mago {
+  grid-area: mago;
+}
+
+.chicas {
+  grid-area: chicas;
+}
+
+.chica {
+  grid-area: chica;
+}
+
+.principe {
+  grid-area: principe;
+}
+
+.bolso {
+  grid-area: bolso;
+}
+
+.vikingo {
+  grid-area: vikingo;
+}
+
+.piernas {
+  grid-area: piernas;
+}
+
+.ladron {
+  grid-area: ladron;
+}
+
+.chicos {
+  grid-area: chicos;
+}
+
+.nieve {
+  grid-area: nieve;
 }/*# sourceMappingURL=style.css.map */

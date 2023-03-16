@@ -4,6 +4,7 @@ import { Item } from './Item'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore'
 import { Loader } from '../loader/Loader'
 
+
 export const ItemListContainer = () => {
 
     const { categoria, subcategoria } = useParams()

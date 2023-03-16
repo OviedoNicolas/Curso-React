@@ -73,6 +73,11 @@ export const Menu = () => {
                     <Link to={`productos/pociones`}>Pociones</Link>
                 </button> 
             </li>
+            <li>
+                <button>
+                    <Link id='todos' to={`productos/`}>Todos los productos</Link>
+                </button> 
+            </li>
         </ul>
     );
 };

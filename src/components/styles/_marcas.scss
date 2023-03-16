@@ -1,8 +1,19 @@
 .marcasContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+
+    h3{
+        align-self: center;
+        font-size: 40px;
+        text-decoration: double underline 2px $decoracion;
+    }
+}
+
+.marcas{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    margin-top: 200px;
-    // border: 4px double $decoracion;
+    margin-top: 50px;
 }
 
 .blanco{

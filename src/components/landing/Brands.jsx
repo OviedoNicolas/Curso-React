@@ -10,23 +10,26 @@ import espada  from '../../img/LaEspadaN.svg'
 export const Brands = () => {
   return (
     <div className='marcasContainer'>
-        <div className='blanco'>
-            <img src={bandidos} alt="" />
-        </div>
-        <div className='negro'>
-            <img src={stone} alt="" />
-        </div>
-        <div className='blanco'>
-            <img src={hood} alt="" />
-        </div>
-        <div className='negro'>
-            <img src={espada} alt="" />
-        </div>
-        <div className='blanco'>
-            <img src={arthur} alt="" />
-        </div>
-        <div className='negro'>
-            <img src={love} alt="" />
+        <h3>Trabajamos con las mejores marcas</h3>
+        <div className='marcas'>
+            <div className='blanco'>
+                <img src={bandidos} alt="" />
+            </div>
+            <div className='negro'>
+                <img src={stone} alt="" />
+            </div>
+            <div className='blanco'>
+                <img src={hood} alt="" />
+            </div>
+            <div className='negro'>
+                <img src={espada} alt="" />
+            </div>
+            <div className='blanco'>
+                <img src={arthur} alt="" />
+            </div>
+            <div className='negro'>
+                <img src={love} alt="" />
+            </div>
         </div>
     </div>
   )
