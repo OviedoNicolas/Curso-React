@@ -60,7 +60,7 @@ export const CarouselProductos = ({extra}) => {
           <Slider {...settings} >
                 {productos.map (producto => (
                   <div key={producto.id}>
-                    <Item id = {producto.id} nombre = {producto.title} precio = {producto.price} img = {producto.imgUrl} />
+                    <Item id = {producto.id} name = {producto.title} price = {producto.price} img = {producto.imgUrl} />
                   </div>
         ))} 
           </Slider>

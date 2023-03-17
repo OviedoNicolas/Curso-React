@@ -52,7 +52,7 @@ export const ItemListContainer = () => {
         productos ?
         <div className='itemList'>
             {productos.map (producto => (
-                <Item key={producto.id} id = {producto.id} nombre = {producto.title} precio = {producto.price} img = {producto.imgUrl} />
+                <Item key={producto.id} id = {producto.id} name = {producto.title} price = {producto.price} img = {producto.imgUrl} />
             ))}
         </div>
             :

@@ -8,10 +8,12 @@ import espada  from '../../img/LaEspadaN.svg'
 
 
 export const Brands = () => {
-  return (
+return (
     <div className='marcasContainer'>
         <h3>Trabajamos con las mejores marcas</h3>
         <div className='marcas'>
+            <div className='blanco'></div>
+            <div className='negro'></div>
             <div className='blanco'>
                 <img src={bandidos} alt="" />
             </div>
@@ -21,6 +23,10 @@ export const Brands = () => {
             <div className='blanco'>
                 <img src={hood} alt="" />
             </div>
+            <div className='negro'></div>
+            <div className='blanco'></div>
+            <div className='negro'></div>
+            <div className='blanco'></div>
             <div className='negro'>
                 <img src={espada} alt="" />
             </div>
@@ -30,7 +36,9 @@ export const Brands = () => {
             <div className='negro'>
                 <img src={love} alt="" />
             </div>
+            <div className='blanco'></div>
+            <div className='negro'></div>
         </div>
     </div>
-  )
+    )
 }

@@ -350,7 +350,7 @@ nav ul #todos {
   right: 150px;
 }
 
-.agregar, .detailProducto .botonBolsa a, .detailProducto .botonSeguir a {
+.agregar, .misc a, .galleryContainer a, .detailProducto .botonBolsa a, .detailProducto .botonSeguir a {
   background-color: #fff;
   color: #b68d2c;
   width: 130px;
@@ -361,33 +361,33 @@ nav ul #todos {
   border-top: 3px double #b68d2c;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
 }
-.agregar:hover, .detailProducto .botonBolsa a:hover, .detailProducto .botonSeguir a:hover {
+.agregar:hover, .misc a:hover, .galleryContainer a:hover, .detailProducto .botonBolsa a:hover, .detailProducto .botonSeguir a:hover {
   background-color: #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::after, .detailProducto .botonBolsa a:hover::after, .detailProducto .botonSeguir a:hover::after {
+.agregar:hover::after, .misc a:hover::after, .galleryContainer a:hover::after, .detailProducto .botonBolsa a:hover::after, .detailProducto .botonSeguir a:hover::after {
   border-color: #1c440f transparent #1c440f #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::before, .detailProducto .botonBolsa a:hover::before, .detailProducto .botonSeguir a:hover::before {
+.agregar:hover::before, .misc a:hover::before, .galleryContainer a:hover::before, .detailProducto .botonBolsa a:hover::before, .detailProducto .botonSeguir a:hover::before {
   border-color: #1c440f #1c440f #1c440f transparent;
   transition: all 0.2s;
 }
-.agregar:active, .detailProducto .botonBolsa a:active, .detailProducto .botonSeguir a:active {
+.agregar:active, .misc a:active, .galleryContainer a:active, .detailProducto .botonBolsa a:active, .detailProducto .botonSeguir a:active {
   transition: all 0.1s;
   width: 120px;
 }
-.agregar:active::after, .detailProducto .botonBolsa a:active::after, .detailProducto .botonSeguir a:active::after {
+.agregar:active::after, .misc a:active::after, .galleryContainer a:active::after, .detailProducto .botonBolsa a:active::after, .detailProducto .botonSeguir a:active::after {
   transition: all 0.1s;
   border-width: 15px 4px 15px 0px;
   left: 120px;
 }
-.agregar:active::before, .detailProducto .botonBolsa a:active::before, .detailProducto .botonSeguir a:active::before {
+.agregar:active::before, .misc a:active::before, .galleryContainer a:active::before, .detailProducto .botonBolsa a:active::before, .detailProducto .botonSeguir a:active::before {
   transition: all 0.1s;
   border-width: 15px 0px 15px 4px;
   right: 120px;
 }
-.agregar::after, .detailProducto .botonBolsa a::after, .detailProducto .botonSeguir a::after {
+.agregar::after, .misc a::after, .galleryContainer a::after, .detailProducto .botonBolsa a::after, .detailProducto .botonSeguir a::after {
   content: "";
   border-style: solid;
   border-width: 15px 10px 15px 0px;
@@ -397,7 +397,7 @@ nav ul #todos {
   top: 0px;
   left: 130px;
 }
-.agregar::before, .detailProducto .botonBolsa a::before, .detailProducto .botonSeguir a::before {
+.agregar::before, .misc a::before, .galleryContainer a::before, .detailProducto .botonBolsa a::before, .detailProducto .botonSeguir a::before {
   content: "";
   border-style: solid;
   border-width: 15px 0px 15px 10px;
@@ -415,6 +415,7 @@ nav ul #todos {
   gap: 30px;
   align-items: center;
   margin-top: 70px;
+  margin-bottom: 70px;
   height: 600px;
 }
 
@@ -518,37 +519,25 @@ nav ul #todos {
 
 .marcas {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin-top: 50px;
 }
 
 .blanco {
-  position: relative;
-  border-top: 4px double #b68d2c;
-}
-.blanco::before {
-  content: "";
-  border-style: solid;
-  border-width: 15px 159px 81px 159px;
-  border-color: #fff #fff transparent #fff;
-  display: block;
-  position: absolute;
-  top: 229px;
-  filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.3490196078));
+  border: 4px double #b68d2c;
 }
 
 .negro {
   background-color: #000;
   border: 4px double #b68d2c;
-  position: relative;
-  filter: drop-shadow(0px 6px 3px rgba(0, 0, 0, 0.3490196078));
 }
 
 footer {
   background-color: #000;
   display: flex;
   height: 180px;
-  margin-top: 200px;
+  margin-top: 70px;
 }
 footer h4 {
   color: #fff;
@@ -899,6 +888,7 @@ footer a:hover {
 .fondoBordo {
   background-color: #610000;
   border: 4px double #b68d2c;
+  margin-top: 50px;
 }
 .fondoBordo h3 {
   color: #fff;
@@ -908,72 +898,150 @@ footer a:hover {
   font-size: 30px !important;
 }
 
-.gallery {
+.galleryContainer {
+  height: 1500px;
   width: 100%;
-  height: 1000px;
-  margin-top: 60px;
+  margin-top: 70px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "caballero caballero caperuzita campesino runas mago" "caballero caballero caperuzita campesino runas mago" "bolso princesa chicos chicos chica principe" "nieve princesa chicos chicos chica principe" "chicas chicas vikingo piernas ladron ladron" "chicas chicas vikingo piernas ladron ladron";
-  filter: grayscale(20%);
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  grid-template-areas: "mujer unisex" "hombre unisex";
 }
-.gallery div {
+.galleryContainer div {
+  height: 100%;
+  position: relative;
+}
+.galleryContainer a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 35%;
+  z-index: 10;
+  width: 300px;
+}
+.galleryContainer a::before {
+  right: 300px;
+  border-width: 20px 0px 20px 15px;
+}
+.galleryContainer a::after {
+  left: 300px;
+  border-width: 20px 15px 20px 0px;
+}
+.galleryContainer a:active {
+  width: 300px;
+}
+.galleryContainer a:active::before {
+  right: 300px;
+  border-width: 20px 0px 20px 10px;
+}
+.galleryContainer a:active::after {
+  left: 300px;
+  border-width: 20px 10px 20px 0px;
+}
+
+.ropaMujer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-area: mujer;
+  grid-auto-flow: row;
+  grid-template-areas: "caperuzita chicas chicas" "caperuzita chicas chicas" "princesa princesa chica";
+}
+.ropaMujer div {
   height: 100%;
 }
 
-.caballero {
-  grid-area: caballero;
+.ropaHombre {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-area: hombre;
+  grid-auto-flow: row;
+  grid-template-areas: "campesino mago vikingo" "chicos chicos vikingo" "chicos chicos nieve";
+}
+.ropaHombre div {
+  height: 100%;
 }
 
-.caperuzita {
-  grid-area: caperuzita;
+.ropaUnisex {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.6fr 1.4fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-area: unisex;
+  grid-auto-flow: row;
+  grid-template-areas: "piernas caballero" "guerrera guerrera";
+}
+.ropaUnisex div {
+  height: 100%;
 }
 
-.campesino {
-  grid-area: campesino;
+.misc {
+  height: 1000px;
+  width: 100%;
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "pociones pociones bolso" "pociones pociones bolso" "runas armas armas" "runas armas armas";
 }
-
-.princesa {
-  grid-area: princesa;
+.misc div {
+  height: 100%;
+  position: relative;
 }
-
-.runas {
-  grid-area: runas;
+.misc a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 35%;
+  z-index: 10;
+  width: 300px;
 }
-
-.mago {
-  grid-area: mago;
+.misc a::before {
+  right: 300px;
+  border-width: 20px 0px 20px 15px;
+}
+.misc a::after {
+  left: 300px;
+  border-width: 20px 15px 20px 0px;
+}
+.misc a:active {
+  width: 300px;
+}
+.misc a:active::before {
+  right: 300px;
+  border-width: 20px 0px 20px 7px;
+}
+.misc a:active::after {
+  left: 300px;
+  border-width: 20px 7px 20px 0px;
 }
 
 .chicas {
   grid-area: chicas;
 }
 
+.caperuzita {
+  grid-area: caperuzita;
+}
+
+.princesa {
+  grid-area: princesa;
+}
+
 .chica {
   grid-area: chica;
-}
-
-.principe {
-  grid-area: principe;
-}
-
-.bolso {
-  grid-area: bolso;
-}
-
-.vikingo {
-  grid-area: vikingo;
-}
-
-.piernas {
-  grid-area: piernas;
-}
-
-.ladron {
-  grid-area: ladron;
 }
 
 .chicos {
@@ -982,4 +1050,103 @@ footer a:hover {
 
 .nieve {
   grid-area: nieve;
+}
+
+.vikingo {
+  grid-area: vikingo;
+}
+
+.campesino {
+  grid-area: campesino;
+}
+
+.mago {
+  grid-area: mago;
+}
+
+.guerrera {
+  grid-area: guerrera;
+}
+
+.piernas {
+  grid-area: piernas;
+}
+
+.caballero {
+  grid-area: caballero;
+}
+
+.pociones {
+  grid-area: pociones;
+}
+
+.bolso {
+  grid-area: bolso;
+}
+
+.armas {
+  grid-area: armas;
+}
+
+.runas {
+  grid-area: runas;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.commentsCarousel {
+  width: 800px;
+  height: 450px;
+}
+.commentsCarousel .containerPrincipal {
+  margin-inline: auto;
+  height: 450px;
+}
+.commentsCarousel .containerPrincipal .containerSecundario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 450px;
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 4px double #b68d2c;
+  border-radius: 10px;
+  width: 600px;
+  height: 300px;
+}
+
+.customerImgContainer {
+  width: 150px;
+  border: 5px double #b68d2c;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -75px;
+}
+
+.customerName {
+  font-size: 30px;
+}
+
+.customerComment {
+  font-size: 24px;
+  text-align: center;
+  font-family: "Macondo Swash Caps", cursive;
+  color: #b68d2c;
+  padding: 0px 20px;
+}
+
+.customerDescription {
+  font-size: 20px;
+  align-self: flex-end;
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */

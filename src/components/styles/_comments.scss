@@ -1,0 +1,60 @@
+.comments{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.commentsCarousel{
+    width: 800px;
+    height: 450px;
+
+    .containerPrincipal{
+        margin-inline: auto;
+        height: 450px;
+
+        .containerSecundario{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 450px;
+        }
+    }
+}
+
+.commentContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 4px double $decoracion;
+    border-radius: 10px;
+    width: 600px;
+    height: 300px;
+}
+
+.customerImgContainer{
+    width: 150px;
+    border: 5px double $decoracion;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -75px;
+}
+
+.customerName{
+    font-size: 30px;
+}
+
+.customerComment{
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Macondo Swash Caps', cursive;
+    color: $decoracion;
+    padding: 0px 20px;
+}
+
+.customerDescription{
+    font-size: 20px;
+    align-self: flex-end;
+    margin-right: 10px;
+}

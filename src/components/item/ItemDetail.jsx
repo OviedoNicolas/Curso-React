@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { ItemCount } from './ItemCount'
-import vitas from '../../img/vitas.png'
-import magic from '../../img/magicCard.png'
-import kingdom from '../../img/kingdom.png'
 import { Link, useParams } from 'react-router-dom'
 import { getFirestore, doc , getDoc} from 'firebase/firestore'
 import { Loader } from '../loader/Loader'
+import { CreditCards } from '../creditCards/CreditCards'
+import { CarouselProductos } from '../carousel/CarouselProductos'
 
 
 export const ItemDetail = () => {
@@ -42,41 +41,36 @@ const onAdd = () => {
       <Loader loading={loading} />
     :
       producto ?
-      <div key={producto.id} className='detailContainer'>
-          <div className='detailFoto'>
-              <img src= {producto.imgUrl} alt={producto.title}/>
-          </div>
-          <div className='detailProducto'>
-              <h2 className='detailTitulo'>{producto.title}</h2>
-              <h3 className='detailPrecio'>₹ {producto.price}</h3>
-              <p className='detailDescripcion'>{producto.description}</p>
-              {
-                !agregado ?
-                  <ItemCount stock={producto.stock} onAdd= {onAdd} /> 
-                  :
-                  <div className='continuarContainer'>
-                    <div className='botonBolsa'>
-                      <Link to= {`/bolsa`}>Ver bolsa</Link>
+      <>
+        <div key={producto.id} className='detailContainer'>
+            <div className='detailFoto'>
+                <img src= {producto.imgUrl} alt={producto.title}/>
+            </div>
+            <div className='detailProducto'>
+                <h2 className='detailTitulo'>{producto.title}</h2>
+                <h3 className='detailPrecio'>₹ {producto.price}</h3>
+                <p className='detailDescripcion'>{producto.description}</p>
+                {
+                  !agregado ?
+                    <ItemCount stock={producto.stock} onAdd= {onAdd} /> 
+                    :
+                    <div className='continuarContainer'>
+                      <div className='botonBolsa'>
+                        <Link to= {`/bolsa`}>Ver bolsa</Link>
+                      </div>
+                      <div className='botonSeguir'>
+                        <Link to= {`/productos`}>Seguir comprando</Link>
+                      </div>
                     </div>
-                    <div className='botonSeguir'>
-                      <Link to= {`/productos`}>Seguir comprando</Link>
-                    </div>
-                  </div>
-              }
-              <p>En stock: {producto.stock} </p>
-              <div className='tarjetasContainer'>
-                <div className='tarjetasImg'>
-                  <img src={vitas} alt="" />
-                </div>
-                <div className='tarjetasImg'>
-                  <img src={magic} alt="" />
-                </div>
-                <div className='tarjetasImg'>
-                  <img src={kingdom} alt="" />
-                </div>
-              </div>
-          </div>
-      </div>
+                }
+                <p>En stock: {producto.stock} </p>
+                <CreditCards />
+            </div>
+        </div>
+        <div className='fondoBordo'>
+          <CarouselProductos />
+        </div>
+      </>
       :
 
       <div className='messageContainer'>

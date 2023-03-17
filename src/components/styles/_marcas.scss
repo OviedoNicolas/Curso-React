@@ -12,29 +12,17 @@
 
 .marcas{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr ;
     margin-top: 50px;
 }
 
 .blanco{
-    position: relative;
-    border-top: 4px double $decoracion;
 
-    &::before{
-        content: "";
-        border-style: solid;
-        border-width: 15px 159px 81px 159px;
-        border-color: $blanco $blanco transparent $blanco;
-        display: block;
-        position: absolute;
-        top: 229px;
-        filter: drop-shadow(0px 6px 3px #00000059);
-    }
+    border: 4px double $decoracion;
 }
 
 .negro{
     background-color: $negro;
     border: 4px double $decoracion;
-    position: relative;
-    filter: drop-shadow(0px 6px 3px #00000059);
     }
