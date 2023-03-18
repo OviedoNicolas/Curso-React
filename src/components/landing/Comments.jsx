@@ -31,7 +31,7 @@ const customers = [
         name: 'Link',
         description: 'Héroe Hyliano.'  ,
         img: link ,
-        comment: '"..."',
+        comment: '". . ."',
         id: '3'
     },
     {

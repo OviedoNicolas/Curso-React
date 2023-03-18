@@ -1,9 +1,10 @@
 import React from 'react'
 import { ItemDetail } from '../item/ItemDetail'
 import { ItemListContainer } from '../item/ItemListContainer'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Landing } from '../landing/Landing';
 import { Cart } from '../cart/Cart';
+import { Page404 } from './Page404';
 
 export const Main = () => {
     return (
@@ -15,6 +16,7 @@ export const Main = () => {
                 <Route exact path ='/productos/:categoria' element={<ItemListContainer />} />
                 <Route exact path ='/productos/:categoria/:subcategoria' element={<ItemListContainer />} />
                 <Route exact path='/bolsa' element = {<Cart />} />
+                <Route path='*' element={<Navigate to='/404' />} />
             </Routes>
         </main>
     )

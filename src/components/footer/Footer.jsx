@@ -67,7 +67,9 @@ export const Footer = () => {
             </li>
         </ul>
         </div>
-        <CreditCards />
+        <div className='tarjetasContainer'>
+            <CreditCards />
+        </div>
     </footer>
   )
 }

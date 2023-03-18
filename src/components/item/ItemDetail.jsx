@@ -74,7 +74,7 @@ const onAdd = () => {
       :
 
       <div className='messageContainer'>
-        <h2 className='mensaje'>Lo sentimos, no hay coincidencia</h2>
+        <h2 className='mensaje'>Lo sentimos, no encontramos el productos que buscas</h2>
       </div>
     )
 }

@@ -5,6 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 import './style.css'
 import { initializeApp } from "firebase/app";
 
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Page404 } from "./components/main/Page404";
+
 const firebaseConfig = {
   apiKey: "AIzaSyABI2k6Azq53nLDUSYnQ8ZR9pUbKLhk5o0",
   authDomain: "ecommerce-coderhouse-b96c4.firebaseapp.com",
@@ -19,7 +23,12 @@ initializeApp(firebaseConfig);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element = {<App/>}/>
+        <Route exact path="/404" element ={<Page404/>}/>
+      </Routes>    
+    </BrowserRouter>
   </React.StrictMode>
 );
 
