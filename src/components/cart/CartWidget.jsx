@@ -12,7 +12,7 @@ export const CartWidget = ({ cantidad }) => {
                     </button>
                 </Link>
             </div>
-            <p>{cantidad}</p>
+            <p className={cantidad ? '' : 'hide'}>{cantidad || ""}</p>
         </div>
     );
 };

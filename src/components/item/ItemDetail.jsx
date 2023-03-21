@@ -1,28 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { ItemCount } from './ItemCount'
 import { Link, useParams } from 'react-router-dom'
 import { getFirestore, doc , getDoc} from 'firebase/firestore'
 import { Loader } from '../loader/Loader'
 import { CreditCards } from '../creditCards/CreditCards'
 import { CarouselProductos } from '../carousel/CarouselProductos'
+import { CartContext } from '../context/CartContext'
 
 
 export const ItemDetail = () => {
+
+  const {agregarCarrito, chequearCarrito} = useContext(CartContext)
 
   const { productoId } = useParams()
   const [producto, setProducto] = useState()
   const [agregado, setAgregado] = useState(false)
   const [loading, setLoading] = useState(true)
 
-
 useEffect(() => {
-
+  
+  setAgregado (false)
   const dataBase = getFirestore ()
   const itemDb = doc( dataBase, 'items' , productoId)
   getDoc (itemDb)
     .then(res => {if (res.data()) {
       setProducto({id: res.id, ...res.data()})
       setLoading (false)
+      chequearCarrito(productoId) && setAgregado (true)
     }else{
       setProducto()
       setLoading (false)
@@ -31,7 +35,8 @@ useEffect(() => {
 
 }, [productoId])
 
-const onAdd = () => {
+const onAdd = (cantidadSeleccionada) => {
+  agregarCarrito (producto, cantidadSeleccionada)
   setAgregado (true)
 }
 
@@ -52,9 +57,10 @@ const onAdd = () => {
                 <p className='detailDescripcion'>{producto.description}</p>
                 {
                   !agregado ?
-                    <ItemCount stock={producto.stock} onAdd= {onAdd} /> 
+                    <ItemCount stock={producto.stock} initial={1} onAdd= {onAdd} agregar={true} /> 
                     :
                     <div className='continuarContainer'>
+                      <p>El producto ya esta en la bolsa</p>
                       <div className='botonBolsa'>
                         <Link to= {`/bolsa`}>Ver bolsa</Link>
                       </div>

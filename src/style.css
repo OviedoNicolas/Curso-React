@@ -26,6 +26,10 @@ h1 {
   color: #fff;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 header {
   display: flex;
   background-color: #000;
@@ -203,6 +207,7 @@ nav ul #todos {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3490196078);
   border: 3px double #b68d2c;
   margin-top: 40px;
+  box-shadow: 8px 8px 12px rgba(59, 59, 59, 0.5882352941);
 }
 .card .cardFoto {
   width: 200px;
@@ -278,6 +283,7 @@ nav ul #todos {
   align-items: center;
   width: 150px;
   gap: 15px;
+  height: 130px;
 }
 
 .contador {
@@ -350,7 +356,7 @@ nav ul #todos {
   right: 150px;
 }
 
-.agregar, .misc a, .galleryContainer a, .detailProducto .botonBolsa a, .detailProducto .botonSeguir a {
+.agregar, .ordenBoton, .misc a, .galleryContainer a, .detailProducto .botonBolsa a, .detailProducto .botonSeguir a {
   background-color: #fff;
   color: #b68d2c;
   width: 130px;
@@ -361,33 +367,33 @@ nav ul #todos {
   border-top: 3px double #b68d2c;
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3490196078));
 }
-.agregar:hover, .misc a:hover, .galleryContainer a:hover, .detailProducto .botonBolsa a:hover, .detailProducto .botonSeguir a:hover {
+.agregar:hover, .ordenBoton:hover, .misc a:hover, .galleryContainer a:hover, .detailProducto .botonBolsa a:hover, .detailProducto .botonSeguir a:hover {
   background-color: #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::after, .misc a:hover::after, .galleryContainer a:hover::after, .detailProducto .botonBolsa a:hover::after, .detailProducto .botonSeguir a:hover::after {
+.agregar:hover::after, .ordenBoton:hover::after, .misc a:hover::after, .galleryContainer a:hover::after, .detailProducto .botonBolsa a:hover::after, .detailProducto .botonSeguir a:hover::after {
   border-color: #1c440f transparent #1c440f #1c440f;
   transition: all 0.2s;
 }
-.agregar:hover::before, .misc a:hover::before, .galleryContainer a:hover::before, .detailProducto .botonBolsa a:hover::before, .detailProducto .botonSeguir a:hover::before {
+.agregar:hover::before, .ordenBoton:hover::before, .misc a:hover::before, .galleryContainer a:hover::before, .detailProducto .botonBolsa a:hover::before, .detailProducto .botonSeguir a:hover::before {
   border-color: #1c440f #1c440f #1c440f transparent;
   transition: all 0.2s;
 }
-.agregar:active, .misc a:active, .galleryContainer a:active, .detailProducto .botonBolsa a:active, .detailProducto .botonSeguir a:active {
+.agregar:active, .ordenBoton:active, .misc a:active, .galleryContainer a:active, .detailProducto .botonBolsa a:active, .detailProducto .botonSeguir a:active {
   transition: all 0.1s;
   width: 120px;
 }
-.agregar:active::after, .misc a:active::after, .galleryContainer a:active::after, .detailProducto .botonBolsa a:active::after, .detailProducto .botonSeguir a:active::after {
+.agregar:active::after, .ordenBoton:active::after, .misc a:active::after, .galleryContainer a:active::after, .detailProducto .botonBolsa a:active::after, .detailProducto .botonSeguir a:active::after {
   transition: all 0.1s;
   border-width: 15px 4px 15px 0px;
   left: 120px;
 }
-.agregar:active::before, .misc a:active::before, .galleryContainer a:active::before, .detailProducto .botonBolsa a:active::before, .detailProducto .botonSeguir a:active::before {
+.agregar:active::before, .ordenBoton:active::before, .misc a:active::before, .galleryContainer a:active::before, .detailProducto .botonBolsa a:active::before, .detailProducto .botonSeguir a:active::before {
   transition: all 0.1s;
   border-width: 15px 0px 15px 4px;
   right: 120px;
 }
-.agregar::after, .misc a::after, .galleryContainer a::after, .detailProducto .botonBolsa a::after, .detailProducto .botonSeguir a::after {
+.agregar::after, .ordenBoton::after, .misc a::after, .galleryContainer a::after, .detailProducto .botonBolsa a::after, .detailProducto .botonSeguir a::after {
   content: "";
   border-style: solid;
   border-width: 15px 10px 15px 0px;
@@ -397,7 +403,7 @@ nav ul #todos {
   top: 0px;
   left: 130px;
 }
-.agregar::before, .misc a::before, .galleryContainer a::before, .detailProducto .botonBolsa a::before, .detailProducto .botonSeguir a::before {
+.agregar::before, .ordenBoton::before, .misc a::before, .galleryContainer a::before, .detailProducto .botonBolsa a::before, .detailProducto .botonSeguir a::before {
   content: "";
   border-style: solid;
   border-width: 15px 0px 15px 10px;
@@ -488,7 +494,8 @@ nav ul #todos {
 }
 
 .continuarContainer {
-  width: 200px;
+  width: 240px;
+  gap: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -542,6 +549,14 @@ footer {
   height: 180px;
   margin-top: 70px;
 }
+footer .tarjetasContainer {
+  display: flex;
+  gap: 20px;
+  margin-right: 40px;
+  align-self: flex-end;
+  width: 255px;
+  margin-bottom: 8px;
+}
 footer .menu {
   display: flex;
   gap: 20px;
@@ -564,15 +579,6 @@ footer a {
 footer a:hover {
   color: #b68d2c;
   transition: 0.5s all;
-}
-
-.tarjetasContainer {
-  display: flex;
-  gap: 20px;
-  margin-right: 40px;
-  align-self: flex-end;
-  width: 255px;
-  margin-bottom: 8px;
 }
 
 .heroOculto {
@@ -879,6 +885,10 @@ footer a:hover {
   margin-top: 70px;
 }
 
+.slick-list {
+  height: 400px;
+}
+
 .carousel {
   width: 1300px;
 }
@@ -909,6 +919,9 @@ footer a:hover {
   background-color: #610000;
   border: 4px double #b68d2c;
   margin-top: 50px;
+}
+.fondoBordo .card {
+  box-shadow: none;
 }
 .fondoBordo h3 {
   color: #fff;
@@ -1092,7 +1105,7 @@ footer a:hover {
   grid-area: piernas;
 }
 
-.caballero, .caballero404Reversa {
+.caballero {
   grid-area: caballero;
 }
 
@@ -1143,6 +1156,7 @@ footer a:hover {
   border-radius: 10px;
   width: 600px;
   height: 300px;
+  box-shadow: 8px 8px 12px rgba(59, 59, 59, 0.5882352941);
 }
 
 .customerImgContainer {
@@ -1195,14 +1209,14 @@ footer a:hover {
   font-size: 150px;
 }
 
-.caballero404 {
+.caballero404, .caballero404Reversa {
   position: absolute;
   right: 481px;
   top: 370px;
   width: 173px;
   animation: caballero 3s steps(1, end) infinite;
 }
-.caballero404::after {
+.caballero404::after, .caballero404Reversa::after {
   content: "";
   position: absolute;
   bottom: 50px;
@@ -1241,4 +1255,172 @@ footer a:hover {
   100% {
     visibility: hidden;
   }
+}
+.cartMensaje {
+  height: 520PX;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cartContainer {
+  min-height: 450PX;
+  width: 1240px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  margin-top: 60px;
+}
+.cartContainer .cartItemContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cartItem {
+  width: 1240px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 20px 0px;
+  border: 4px double #b68d2c;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+.cartItem .itemData {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100px;
+  justify-self: flex-start;
+}
+.cartItem .itemData p:nth-child(1) {
+  text-decoration: underline 2px #b68d2c;
+}
+.cartItem .itemData p:nth-child(2) {
+  color: #b68d2c;
+}
+.cartItem .cartItemImg {
+  width: 100px;
+  border: 4px double #b68d2c;
+  justify-self: flex-start;
+}
+
+.totalTitulo {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.totalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 30px;
+  width: 120px;
+  height: 90px;
+  color: #b68d2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-top: 4px double #b68d2c;
+  font-size: 1.8rem;
+  background-color: #610000;
+  padding-top: 30px;
+  filter: drop-shadow(7px 7px 5px rgba(0, 0, 5, 0.6588235294));
+}
+.totalContainer::after {
+  content: "";
+  border-style: solid;
+  border-width: 15px 60px 25px 60px;
+  border-color: #610000 #610000 transparent #610000;
+  display: block;
+  position: absolute;
+  top: 86px;
+}
+
+.ordenMensaje {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-self: flex-start;
+  width: 400px;
+  height: 250px;
+  padding: 20px;
+  border: 4px double #b68d2c;
+  color: #b68d2c;
+  background-color: #610000;
+  margin-top: 80px;
+  margin-right: 50px;
+  font-size: 1.4rem;
+}
+.ordenMensaje p {
+  font-family: "Macondo Swash Caps", cursive;
+}
+.ordenMensaje p span {
+  color: #fff;
+  text-decoration: underline 2px #fff;
+}
+.ordenMensaje p:first-child {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.ordenFormContainer {
+  width: 400px;
+  border: 4px double #b68d2c;
+  border-radius: 10px;
+  margin-top: 80px;
+  margin-right: 50px;
+  align-self: flex-start;
+  height: 320px;
+}
+
+.ordenForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-size: 1.2rem;
+  gap: 15px;
+  color: #b68d2c;
+}
+.ordenForm input {
+  width: 350px;
+  border: 3px double #b68d2c;
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 1.1rem;
+  padding: 5px;
+}
+.ordenForm input:focus {
+  outline: none;
+}
+
+.ordenBoton {
+  width: 200px;
+  align-self: center;
+  margin-top: 10px;
+}
+.ordenBoton::before {
+  right: 200px;
+}
+.ordenBoton::after {
+  left: 200px;
+}
+.ordenBoton:active {
+  width: 190px;
+}
+.ordenBoton:active::before {
+  right: 190px;
+}
+.ordenBoton:active::after {
+  left: 190px;
 }/*# sourceMappingURL=style.css.map */

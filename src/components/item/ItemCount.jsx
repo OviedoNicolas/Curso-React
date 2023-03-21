@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
-export const ItemCount = ({stock, onAdd}) => {
+export const ItemCount = ({initial, stock, onAdd, agregar}) => {
 
-const [cantidad, setCantidad] = useState(1)
+const [cantidad, setCantidad] = useState(initial)
 
   return (
     stock ?
     <div className='contadorContainer'>
         <div className='contador'>
-            <button className={cantidad === 1 ? 'disabled' : 'resta'} onClick={() =>  setCantidad (cantidad - 1) } disabled = {cantidad === 1}>
+            <button className={cantidad === 1 ? 'disabled' : 'resta'} onClick={() => setCantidad (cantidad - 1) } disabled = {cantidad === 1}>
                 -
             </button>
             <div>
@@ -18,9 +18,11 @@ const [cantidad, setCantidad] = useState(1)
                 +
             </button>
         </div>
+        {agregar &&
         <div>
-            <button className='agregar' onClick={() => {onAdd()}}>Agregar</button>
+            <button className='agregar' onClick={() => onAdd(cantidad)}>Agregar</button>
         </div>
+        }
     </div>
     : 
     

@@ -5,6 +5,15 @@ footer{
     align-items: center;
     height: 180px;
     margin-top: 70px;
+    
+    .tarjetasContainer{
+        display: flex;
+        gap: 20px;
+        margin-right: 40px;
+        align-self: flex-end;
+        width: 255px;
+        margin-bottom: 8px;
+    }
 
     .menu{
         display: flex;
@@ -35,11 +44,3 @@ footer{
     }
 }
 
-.tarjetasContainer {
-    display: flex;
-    gap: 20px;
-    margin-right: 40px;
-    align-self: flex-end;
-    width: 255px;
-    margin-bottom: 8px;
-}

@@ -4,7 +4,6 @@ import { ItemListContainer } from '../item/ItemListContainer'
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Landing } from '../landing/Landing';
 import { Cart } from '../cart/Cart';
-import { Page404 } from './Page404';
 
 export const Main = () => {
     return (

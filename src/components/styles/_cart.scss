@@ -1,0 +1,96 @@
+.cartMensaje{
+    height: 520PX;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cart{
+    display: flex;
+    align-items: center;
+}
+
+.cartContainer{
+    min-height: 450PX;
+    width: 1240px;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-top: 60px;
+
+    .cartItemContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.cartItem{
+    width: 1240px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 20px 0px;
+    border: 4px double $decoracion;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-items: center;
+
+    .itemData{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 100px;
+        justify-self: flex-start;
+
+        p:nth-child(1){
+            text-decoration:underline 2px $decoracion;
+        }
+        p:nth-child(2){
+            color: $decoracion;
+        }
+    }
+
+    .cartItemImg{
+        width: 100px;
+        border: 4px double $decoracion;
+        justify-self: flex-start;
+    }
+}
+
+.totalTitulo{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.totalContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: 30px;
+    width: 120px;
+    height: 90px;
+    color: $decoracion;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-top: 4px double $decoracion;
+    font-size: 1.8rem;
+    background-color: $color-primario;
+    padding-top: 30px;
+    filter: drop-shadow( 7px 7px 5px #000005a8);
+
+        &::after{
+        content: "";
+        border-style: solid;
+        border-width: 15px 60px 25px 60px;
+        border-color: $color-primario $color-primario transparent $color-primario;
+        display: block;
+        position: absolute;
+        top: 86px;
+    }
+}

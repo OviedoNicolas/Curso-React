@@ -4,8 +4,6 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import './style.css'
 import { initializeApp } from "firebase/app";
-
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Page404 } from "./components/main/Page404";
 

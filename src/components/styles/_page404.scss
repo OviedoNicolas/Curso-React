@@ -47,7 +47,7 @@
 }
 
 .caballero404Reversa{
-    @extend .caballero;
+    @extend .caballero404;
     animation-name: caballeroReversa;
     transform: scaleX(-1);
 }

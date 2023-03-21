@@ -1,0 +1,87 @@
+.ordenMensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-self: flex-start;
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+    border: 4px double $decoracion;
+    color: $decoracion;
+    background-color: $color-primario;
+    margin-top: 80px;
+    margin-right: 50px;
+    font-size: 1.4rem;
+
+    p{
+        font-family: 'Macondo Swash Caps', cursive;
+
+        span{
+            color: $blanco;
+            text-decoration: underline 2px $blanco;
+        }
+    }
+
+    p:first-child{
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+.ordenFormContainer{
+    width: 400px;
+    border: 4px double $decoracion;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-right: 50px;
+    align-self: flex-start;
+    height: 320px;
+}
+
+.ordenForm{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 1.2rem;
+    gap: 15px;
+    color: $decoracion;
+
+    input{
+        width: 350px;
+        border: 3px double $decoracion;
+        font-family: 'Macondo Swash Caps', cursive;
+        font-size: 1.1rem;
+        padding: 5px;
+
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+.ordenBoton{
+    @extend .agregar;
+    width: 200px;
+    align-self: center;
+    margin-top: 10px;
+        
+    &::before{
+        right: 200px;
+    }
+
+    &::after{
+        left: 200px;
+    }
+
+    &:active{
+        width: 190px;
+
+        &::before{
+            right: 190px;
+        }
+
+        &::after{
+            left: 190px;
+        }
+    }
+}
