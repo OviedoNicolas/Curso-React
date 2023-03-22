@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+![Animation](https://i.ibb.co/dj4hVc6/chrome-capture-2023-2-17.gif)
+
 In the project directory, you can run:
 
 ### `npm start`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const ItemCount = ({initial, stock, onAdd, agregar}) => {
+export const ItemCount = ({initial, stock, onAdd, agregar, onCantidad}) => {
 
 const [cantidad, setCantidad] = useState(initial)
 
@@ -8,13 +8,23 @@ const [cantidad, setCantidad] = useState(initial)
     stock ?
     <div className='contadorContainer'>
         <div className='contador'>
-            <button className={cantidad === 1 ? 'disabled' : 'resta'} onClick={() => setCantidad (cantidad - 1) } disabled = {cantidad === 1}>
+            <button className={cantidad === 1 ? 'disabled' : 'resta'} onClick={() => {
+                const nuevaCantidad = cantidad -1
+                setCantidad (cantidad - 1) 
+            onCantidad &&
+                onCantidad(nuevaCantidad)
+                }} disabled = {cantidad === 1}>
                 -
             </button>
             <div>
                 <p>{cantidad}</p>
             </div>
-            <button className={stock === cantidad ? 'disabled' : 'suma' } onClick={() => setCantidad (cantidad + 1)} disabled = {cantidad === stock}>
+            <button className={stock === cantidad ? 'disabled' : 'suma' } onClick={() => {
+                const nuevaCantidad = cantidad + 1
+                setCantidad (cantidad + 1)
+            onCantidad &&
+                onCantidad (nuevaCantidad)
+                }} disabled = {cantidad === stock}>
                 +
             </button>
         </div>

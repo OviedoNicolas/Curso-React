@@ -1,7 +1,7 @@
 import React from 'react'
-import vitas from '../../img/vitas.png'
-import magic from '../../img/magicCard.png'
-import kingdom from '../../img/kingdom.png'
+import vitas from '../../img/cards/vitas.png'
+import magic from '../../img/cards/magicCard.png'
+import kingdom from '../../img/cards/kingdom.png'
 
 export const CreditCards = () => {
   return (

@@ -4,7 +4,6 @@ import { CartContext } from '../context/CartContext'
 import { OrderForm } from './OrderForm'
 
 
-
 export const Cart = () => {
 
   const {carrito, total } = useContext(CartContext)

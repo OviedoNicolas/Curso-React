@@ -1348,6 +1348,17 @@ footer a:hover {
   top: 86px;
 }
 
+.stockContainer {
+  display: flex;
+  flex-direction: column;
+}
+.stockContainer .contadorContainer {
+  height: 60px;
+}
+.stockContainer p {
+  font-size: 1.2rem;
+}
+
 .ordenMensaje {
   display: flex;
   flex-direction: column;

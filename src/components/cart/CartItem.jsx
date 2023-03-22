@@ -4,7 +4,11 @@ import { ItemCount } from '../item/ItemCount'
 
 export const CartItem = ({producto}) => {
 
-    const { borrarDelCarrito} = useContext(CartContext)
+    const { borrarDelCarrito, actualizarCantidad } = useContext(CartContext)
+
+    const contadorActualizarCantidad = (cantidad) =>{
+        actualizarCantidad ( producto.id , cantidad)
+    }
 
     return (
     <div className='cartItem'>
@@ -15,7 +19,10 @@ export const CartItem = ({producto}) => {
             <p>{producto.title}</p>
             <p>${producto.price}</p>
         </div>
-        <ItemCount initial={producto.quantity} stock={producto.stock}/>
+        <div className='stockContainer'>
+            <ItemCount initial={producto.quantity} stock={producto.stock} onCantidad={contadorActualizarCantidad}/>
+            <p>En stock: {producto.stock} </p>
+        </div>
         <p>${producto.quantity*producto.price}</p>
         <button className='resta' onClick={()=> borrarDelCarrito (producto.id)}>X</button>
     </div>

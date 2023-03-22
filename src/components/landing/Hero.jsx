@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import banner from '../../img/result4.jpg'
-import banner1 from '../../img/result2.png'
-import banner2 from '../../img/result.png'
+import banner from '../../img/hero/result4.jpg'
+import banner1 from '../../img/hero/result2.png'
+import banner2 from '../../img/hero/result.png'
 import HeroSlider from 'hero-slider/dist/HeroSlider'
 import { Slide } from 'hero-slider'
 

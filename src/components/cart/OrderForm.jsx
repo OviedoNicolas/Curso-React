@@ -41,7 +41,7 @@ export const OrderForm = () => {
     compraRealizada ?
     <div className='ordenMensaje'>
       <p>Muchas gracias por su compra!!!</p>
-      <p>Puede seguir su compra con el siguiente número: <br/><span>{ordenId}</span></p>
+      <p>Puede seguir su orden de compra con el siguiente número: <br/><span>{ordenId}</span></p>
     </div>
     :
 
@@ -49,15 +49,15 @@ export const OrderForm = () => {
       <form className='ordenForm' onSubmit={enviarCompra}>
         <label>
           Nombre:<br/>
-          <input type="text" value={clienteNombre} onChange={(e) => setClienteNombre(e.target.value)} />
+          <input required type="text" value={clienteNombre} onChange={(e) => setClienteNombre(e.target.value)} />
         </label>
         <label>
           Teléfono:<br/>
-          <input type="text" value={clienteTelefono} onChange={(e) => setClienteTelefono(e.target.value)} />
+          <input required type="text" value={clienteTelefono} onChange={(e) => setClienteTelefono(e.target.value)} />
         </label>
         <label>
           Email:<br/>
-          <input type="email" value={clienteEmail} onChange={(e) => setClienteEmail(e.target.value)} />
+          <input required type="email" value={clienteEmail} onChange={(e) => setClienteEmail(e.target.value)} />
         </label>
         <button className='ordenBoton' type="submit">Realizar compra</button>
       </form>

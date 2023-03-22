@@ -36,8 +36,8 @@ useEffect(() => {
 }, [productoId])
 
 const onAdd = (cantidadSeleccionada) => {
-  agregarCarrito (producto, cantidadSeleccionada)
   setAgregado (true)
+  agregarCarrito (producto, cantidadSeleccionada)
 }
 
 

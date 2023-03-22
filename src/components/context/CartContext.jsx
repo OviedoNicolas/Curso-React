@@ -7,7 +7,8 @@ export const CartContext = createContext ({
     vaciarCarrito: () => {},
     cantidadProductos: () => {},
     total: () => {},
-    chequearCarrito: () => {}
+    chequearCarrito: () => {},
+    actualizarCantidad: () => {}
 })
 
 const CartProvider = (props) => {
@@ -16,7 +17,7 @@ const CartProvider = (props) => {
     
     const chequearCarrito = (id) => {
         return carrito.find(item => item.id === id) ? true : false;
-    }
+    };
 
     const  agregarCarrito = (producto, cantidad) => {
         if (chequearCarrito(producto.id)) {
@@ -51,8 +52,18 @@ const CartProvider = (props) => {
         return total        
     };
 
+    const actualizarCantidad = (id, cantidadActualizada) => {
+        const carritoActualizado = carrito.map(item => {
+            if(item.id === id){
+                return {...item, quantity: cantidadActualizada}
+            }
+            return item
+        })
+        setCarrito(carritoActualizado)
+    };
+
     return (
-        <CartContext.Provider value={{ carrito, vaciarCarrito, agregarCarrito, borrarDelCarrito, cantidadProductos , total, chequearCarrito }}>
+        <CartContext.Provider value={{ carrito, vaciarCarrito, agregarCarrito, borrarDelCarrito, cantidadProductos , total, chequearCarrito, actualizarCantidad }}>
             {props.children}
         </CartContext.Provider>
         );

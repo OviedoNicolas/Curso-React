@@ -94,3 +94,16 @@
         top: 86px;
     }
 }
+
+.stockContainer{
+    display: flex;
+    flex-direction: column;
+
+    .contadorContainer{
+        height: 60px;
+    }
+    
+    p{
+        font-size: 1.2rem;
+    }
+}
