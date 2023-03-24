@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { CartContext } from '../context/CartContext'
 
@@ -9,7 +9,9 @@ export const OrderForm = () => {
   const [clienteNombre, setClienteNombre] = useState('')
   const [clienteTelefono, setClienteTelefono] = useState('')
   const [clienteEmail, setClienteEmail] = useState('')
+  const [clienteEmailConfirmado, setClienteEmailConfirmado] = useState('')
   const [compraRealizada, setCompraRealizada] = useState(false)
+  const [disabled, setDisabled] = useState(true)
   const [ordenId, setOrdenId] = useState('')
   const dataBase = getFirestore();
   const ordenes = collection(dataBase, 'orders');
@@ -31,11 +33,28 @@ export const OrderForm = () => {
       .then((docRef) => {
         setCompraRealizada(true)
         setOrdenId(docRef.id)
+        // Para simular el reseteo sin que haga falta recargar la pagina, despues de 7 segundos se vacia el array del carrito asi se puede volver a probar todas las funcionalidades
         setTimeout(() => {
           vaciarCarrito()
         }, 7000);
       })
     }
+
+    const confirmarMail = () => {
+      if (clienteEmail.length == 0){
+        setDisabled(true)
+      }else{
+        clienteEmail === clienteEmailConfirmado ? setDisabled (false) : setDisabled(true)
+      }
+    }
+    
+    useEffect(() => {
+
+      confirmarMail()
+
+    }, [clienteEmail, clienteEmailConfirmado])
+    
+
 
   return (
     compraRealizada ?
@@ -59,7 +78,13 @@ export const OrderForm = () => {
           Email:<br/>
           <input required type="email" value={clienteEmail} onChange={(e) => setClienteEmail(e.target.value)} />
         </label>
-        <button className='ordenBoton' type="submit">Realizar compra</button>
+        <label>
+          Confirmar Email:<br/>
+          <input required type="email" value={clienteEmailConfirmado} onChange={(e) => setClienteEmailConfirmado(e.target.value)} />
+        </label>
+          {!disabled &&
+          <button className='ordenBoton' type="submit">Realizar compra</button>
+          }
       </form>
     </div>
   )

@@ -32,6 +32,7 @@ useEffect(() => {
       setLoading (false)
     }})
 
+    window.scrollTo(0, 100)
 
 }, [productoId])
 
@@ -74,7 +75,7 @@ const onAdd = (cantidadSeleccionada) => {
             </div>
         </div>
         <div className='fondoBordo'>
-          <CarouselProductos />
+          <CarouselProductos productoCargado={producto.id} />
         </div>
       </>
       :

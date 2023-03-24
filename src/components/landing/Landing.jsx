@@ -9,10 +9,10 @@ export const Landing = () => {
   return (
     <>
         <Hero />
-        <CarouselProductos />
+        <CarouselProductos extra={'nuevo'} />
         <Gallery principal={true} />
         <div className='fondoBordo'>
-          <CarouselProductos />
+          <CarouselProductos extra={'best-seller'}/>
         </div>
         <Comments/>
         <Gallery />

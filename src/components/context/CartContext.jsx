@@ -52,6 +52,7 @@ const CartProvider = (props) => {
         return total        
     };
 
+// Con esta funcion se puede cambiar las cantidades de los productos ya estando en el carrito, la idea en un comienzo era actualizar el stock de firebase, pero en caso que alguien compre todo los productos quedaria en cero y si alguien mas quiere probar la pagina no podria
     const actualizarCantidad = (id, cantidadActualizada) => {
         const carritoActualizado = carrito.map(item => {
             if(item.id === id){

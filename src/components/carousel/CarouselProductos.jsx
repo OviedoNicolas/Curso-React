@@ -7,7 +7,7 @@ import { getFirestore, collection, getDocs, query, where } from 'firebase/firest
 
 
 
-export const CarouselProductos = ({extra}) => {
+export const CarouselProductos = ({extra, productoCargado}) => {
 
   const [productos, setProductos] = useState([])
   const [titulo, setTitulo] = useState()
@@ -16,15 +16,17 @@ export const CarouselProductos = ({extra}) => {
 
     const dataBase = getFirestore()
     const dbCollection = collection(dataBase, 'items')
-
+    // Con los elementos traidos desde firebase se va a analizar si tienen el campo extra para aramar un carousel, que dependiendo el valor del campo traera los productos "mas vendidos" o "nuevos"
     if(extra){
       const productosFiltrados = query(dbCollection, where('extra', '==', extra))
       getDocs (productosFiltrados)
       .then(res => setProductos(res.docs.map (item => ({id : item.id, ...item.data()}))))
     }else {
+      //en la siguiente respuesta se arma un array con 8 elementos traidos de firebase de manera aleatoria, y se evita el producto que ya este cargado
       let productosRandom = []
       getDocs(dbCollection)
       .then (res => {productosRandom = res.docs.map (item => ({id : item.id, ...item.data()}))
+      productosRandom = productosRandom.filter (producto => producto.id !== productoCargado.id)
       productosRandom = productosRandom.sort(() => {return Math.random() > 0.5 ? 1 : -1 })
       productosRandom = productosRandom.slice(0, 8)
       setProductos(productosRandom)
@@ -41,7 +43,7 @@ export const CarouselProductos = ({extra}) => {
     
   }, [extra])
   
-
+// las siguientes lineas establecen los settings del carousel armado con slick-carousel
   const settings = {
     dots: false,
     infinite: true,

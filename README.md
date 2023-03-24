@@ -1,73 +1,35 @@
-# Getting Started with Create React App
+# Proyecto para Coderhouse del curso de React js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## La marzmorra del fantástico duende Earl weapons & magic shop
 
-## Available Scripts
+    El proyecto es un e-commerce, el cual cuenta con diferentes secciones donde se puedan ver los productos disponibles, por cada producto también se agrega una sección de detalles, en la cual se pueden agregar unidades al carrito de compra.
 
-![Animation](https://i.ibb.co/dj4hVc6/chrome-capture-2023-2-17.gif)
+    Una vez en dicho carrito, se muestra una lista de todos los productos agregados, así como un formulario para completar y poder terminar la compra.
 
-In the project directory, you can run:
+    La página está conectada con una base de datos armada en Firebase desde donde se obtienen los productos y donde se guardan las órdenes generadas.
 
-### `npm start`
+    La tienda no es real, y está pensado como el e-commerce que visitaría los grandes héroes o villanos de historias de fantasía medievales.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Requisitos previos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    - Node.js 18.15.0 o superior.
+    - NPM 8.19.4 o superior.
 
-### `npm test`
+# Instalación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - Clonar el repositorio.
+    - Instalar las dependencias dentro del repositorio con el comando: npm install.
+    - Iniciar con el comando: npm start.
 
-### `npm run build`
+# Dependencias externas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   Para el proyecto se usaron las siguientes dependencias externas:
+    - Bootstrap y Reactstrap : se utiliza para poder darle funcionalidad a los dropdown del navbar.
+    - Hero-slider: se utiliza para poder armar el hero de la página con movimiento.
+    - React-parallax: se utiliza para darle efecto parallax a las galerías de imágenes.
+    - React-slick y Slick-carousel: se utiliza para armar los carruseles de la página, tanto los de los productos como el de los comentarios.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Aclaraciones
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
+    Dentro de los archivos se pueden encontrar algunas aclaraciones de funcionalidades o de código.

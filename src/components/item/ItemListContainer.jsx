@@ -16,6 +16,7 @@ export const ItemListContainer = () => {
       const dataBase = getFirestore()
       const dbCollection = collection(dataBase, 'items')
 
+// en este caso se aplican dos filtros, en caso que tenga una subcategoria se le va a dar prioridad a esa subcategiroa, en caso que no tenga se tomara la categoria principal
         if (subcategoria){
           const productosSubCategoria = query(dbCollection, where('subcategory', '==', subcategoria ))
           getDocs (productosSubCategoria)
